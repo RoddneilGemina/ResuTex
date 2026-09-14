@@ -1,0 +1,136 @@
+[
+  {
+    "id": "088cc4cb-bfa0-4bcc-8ea8-4970d5dcc1db",
+    "created_at": "2026-09-14T08:39:21.929855Z",
+    "company": "Bjak",
+    "role": "Backend Software Engineer (AI Finance Agent)",
+    "direct_url": "https://jobs.ashbyhq.com/bjak/9f7e8b62-dfae-47c3-8bc6-9ebf40f09ee3",
+    "source_board": "Ashby",
+    "salary": "PHP 180,000 - 240,000 / mo",
+    "hiring_contact": "Bjak AI & Engineering Hiring Team",
+    "match_score": 73,
+    "matched_skills": [
+      "Python",
+      "AWS",
+      "Kubernetes",
+      "Docker",
+      "PostgreSQL",
+      "AI"
+    ],
+    "missing_skills": [
+      "SRE",
+      "REST",
+      "Microservices"
+    ],
+    "status": "tailored_ready_to_apply",
+    "assets": {
+      "resume_pdf": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\bjak_backend_software_engineer_ai_finance_agent\\resume.pdf",
+      "cover_letter_pdf": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\bjak_backend_software_engineer_ai_finance_agent\\cover_letter.pdf",
+      "cold_email": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\bjak_backend_software_engineer_ai_finance_agent\\cold_email.md"
+    }
+  },
+  {
+    "id": "7543e875-b9b0-4859-9d4a-9e1ad42c11da",
+    "created_at": "2026-09-14T08:39:22.019570Z",
+    "company": "Double the Donation",
+    "role": "Software Engineer / Software Developer",
+    "direct_url": "https://jobs.ashbyhq.com/double-the-donation/7b2e1f44-9382-416b-bc54-3e9a7e6bdf21",
+    "source_board": "Ashby",
+    "salary": "PHP 200,000 / mo (PHP 2.4M / yr)",
+    "hiring_contact": "Technical Recruiting Team",
+    "match_score": 98,
+    "matched_skills": [
+      "Python",
+      "JavaScript",
+      "React",
+      "AWS",
+      "PostgreSQL"
+    ],
+    "missing_skills": [],
+    "status": "tailored_ready_to_apply",
+    "assets": {
+      "resume_pdf": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\double_the_donation_software_engineer__software_de\\resume.pdf",
+      "cover_letter_pdf": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\double_the_donation_software_engineer__software_de\\cover_letter.pdf",
+      "cold_email": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\double_the_donation_software_engineer__software_de\\cold_email.md"
+    }
+  },
+  {
+    "id": "de965466-000f-4c76-88d5-567a5cdac255",
+    "created_at": "2026-09-14T08:39:22.113656Z",
+    "company": "Wingz PH",
+    "role": "Software Engineer (Django)",
+    "direct_url": "https://apply.workable.com/wingz/j/69E4C5635F/",
+    "source_board": "Workable",
+    "salary": "PHP 150,000 - 200,000 / mo",
+    "hiring_contact": "Wingz Engineering Leadership",
+    "match_score": 98,
+    "matched_skills": [
+      "Python",
+      "Django",
+      "AWS",
+      "Linux",
+      "CI/CD",
+      "PostgreSQL"
+    ],
+    "missing_skills": [],
+    "status": "tailored_ready_to_apply",
+    "assets": {
+      "resume_pdf": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\wingz_ph_software_engineer_django\\resume.pdf",
+      "cover_letter_pdf": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\wingz_ph_software_engineer_django\\cover_letter.pdf",
+      "cold_email": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\wingz_ph_software_engineer_django\\cold_email.md"
+    }
+  },
+  {
+    "id": "2d098be1-3012-432f-8656-b60860d24b0e",
+    "created_at": "2026-09-14T08:39:22.207711Z",
+    "company": "Foundry for Good",
+    "role": "Software Engineer",
+    "direct_url": "https://jobs.ashbyhq.com/foundry-for-good/3a8c4f19-b22e-4089-8d77-6f81a704e6c1",
+    "source_board": "Ashby",
+    "salary": "PHP 200,000 / mo (PHP 2.4M / yr)",
+    "hiring_contact": "Foundry Talent Acquisition",
+    "match_score": 98,
+    "matched_skills": [
+      "Python",
+      "TypeScript",
+      "React",
+      "AWS",
+      "Docker"
+    ],
+    "missing_skills": [],
+    "status": "tailored_ready_to_apply",
+    "assets": {
+      "resume_pdf": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\foundry_for_good_software_engineer\\resume.pdf",
+      "cover_letter_pdf": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\foundry_for_good_software_engineer\\cover_letter.pdf",
+      "cold_email": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\foundry_for_good_software_engineer\\cold_email.md"
+    }
+  },
+  {
+    "id": "14955139-7d14-4c79-bd6c-f71c03e1bbe5",
+    "created_at": "2026-09-14T08:39:22.338774Z",
+    "company": "Remotely",
+    "role": "Full Stack Developer",
+    "direct_url": "https://apply.workable.com/remotely/j/9E4C87321A/",
+    "source_board": "Workable",
+    "salary": "PHP 140,000 - 180,000 / mo",
+    "hiring_contact": "Engineering Recruitment",
+    "match_score": 77,
+    "matched_skills": [
+      "Python",
+      "React",
+      "Node.js",
+      "Docker",
+      "PostgreSQL"
+    ],
+    "missing_skills": [
+      "QA",
+      "Microservices"
+    ],
+    "status": "tailored_ready_to_apply",
+    "assets": {
+      "resume_pdf": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\remotely_full_stack_developer\\resume.pdf",
+      "cover_letter_pdf": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\remotely_full_stack_developer\\cover_letter.pdf",
+      "cold_email": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\remotely_full_stack_developer\\cold_email.md"
+    }
+  }
+]

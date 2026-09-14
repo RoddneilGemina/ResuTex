@@ -1,0 +1,52 @@
+\documentclass[letterpaper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\geometry{letterpaper, margin=0.6in}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{titlesec}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdftitle={<<NAME>> - Resume},
+    pdfauthor={<<NAME>>}
+}
+
+% Section formatting
+\titleformat{\section}{\large\bfseries\uppercase}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+
+\setlength{\parindent}{0pt}
+\setlist[itemize]{leftmargin=*,noitemsep,topsep=2pt}
+
+\begin{document}
+
+% Header
+\begin{center}
+    {\LARGE \textbf{<<NAME>>}} \\ \vspace{2pt}
+    \small <<LOCATION>> \ $\cdot$ \ <<PHONE>> \ $\cdot$ \ \href{mailto:<<EMAIL>>}{<<EMAIL>>} \\ \vspace{2pt}
+    \href{<<LINKEDIN>>}{LinkedIn} \ $\cdot$ \ \href{<<GITHUB>>}{GitHub} \ $\cdot$ \ \href{<<PORTFOLIO>>}{Portfolio}
+\end{center}
+
+\vspace{-4pt}
+\section{Professional Summary}
+<<SUMMARY>>
+
+\section{Education}
+<<EDUCATION_SECTION>>
+
+\section{Industry Certifications}
+<<CERTIFICATIONS_SECTION>>
+
+\section{Work Experience}
+<<EXPERIENCE_SECTION>>
+
+\section{Featured Projects \& Research}
+<<PROJECTS_SECTION>>
+
+\section{Technical Skills}
+<<SKILLS_SECTION>>
+
+\end{document}

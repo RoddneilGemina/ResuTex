@@ -1,0 +1,267 @@
+{
+  "personal": {
+    "name": "Roddneil B. Gemina",
+    "email": "roddneilgemina@gmail.com",
+    "phone": "+63 956 241 3577",
+    "location": "Cebu City, Philippines",
+    "headline": "Software Engineer | SRE & Full-Stack Developer | Visual AI Researcher",
+    "github": "https://github.com/RoddneilGemina",
+    "linkedin": "https://www.linkedin.com/in/roddneil-gemina-20b423409",
+    "portfolio": "https://roddneilgemina.github.io",
+    "summary": "Computer Science graduate with published research in AI and gamified systems, hands-on industry experience in Site Reliability Engineering (SRE) at Opswerks and Quality Assurance (QA) at DXForm Technologies. Skilled in Python, Java, JavaScript/TypeScript, AWS, Docker, Kubernetes, and full-stack web architectures."
+  },
+  "education": [
+    {
+      "institution": "Cebu Institute of Technology - University",
+      "degree": "Bachelor of Science in Computer Science",
+      "location": "Cebu City, Philippines",
+      "period": "2022 - 2026",
+      "highlights": [
+        "Presidential OIC & Bass 2 - Koro Teknoy Chorale",
+        "Scopus-Indexed Conference Paper Author (ICETT 2026)",
+        "Philippine Computing Science Congress Presenter (PCSC 2026, Davao)"
+      ]
+    },
+    {
+      "institution": "Philippine Science High School - Central Visayas Campus",
+      "degree": "Secondary Education (STEM Strand)",
+      "location": "Argao, Cebu, Philippines",
+      "period": "2016 - 2022",
+      "highlights": [
+        "Graduated With Honors",
+        "Dean's Lister Placement",
+        "Red Hot Pawns Chess Club (2 Years)"
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "title": "PhilNITS FE (Fundamental Engineer)",
+      "issuer": "Philippine National IT Standards Foundation",
+      "date": "April 2025",
+      "description": "Comprehensive engineering certification assessing discrete structures, algorithms, databases, networking, and software design."
+    },
+    {
+      "title": "TOPCIT Level 3 Expertise",
+      "issuer": "Test of Practical Competency in IT (TOPCIT)",
+      "date": "2025",
+      "description": "Demonstrated advanced proficiency in software development, technical communication, and systems architecture."
+    },
+    {
+      "title": "AWS Academy Graduate - Cloud Architecting & Cloud Foundations",
+      "issuer": "Amazon Web Services (AWS)",
+      "date": "2024 - 2025",
+      "description": "Architecting multi-tier cloud solutions, VPC networking, IAM security, and resilient microservices on AWS."
+    },
+    {
+      "title": "CodeChum Certified in Java & C Programming",
+      "issuer": "CodeChum",
+      "date": "2023 - 2024",
+      "description": "Demonstrated mastery in object-oriented programming, data structures, and memory management."
+    }
+  ],
+  "experience": [
+    {
+      "company": "Opswerks",
+      "role": "Site Reliability Engineering (SRE) Intern",
+      "location": "Cebu City, Philippines",
+      "period": "2026",
+      "bullets": [
+        "Administered Linux server environments, configuring AWS cloud infrastructure, Docker containers, and Kubernetes pods.",
+        "Built automated deployment pipelines and integrated telemetry and monitoring tools to maintain high application availability.",
+        "Automated repetitive operational workflows using Python and Bash scripting, reducing manual incident troubleshooting time."
+      ],
+      "keywords": [
+        "AWS",
+        "Kubernetes",
+        "Docker",
+        "Linux",
+        "SRE",
+        "Python",
+        "Bash",
+        "CI/CD",
+        "Monitoring",
+        "DevOps"
+      ]
+    },
+    {
+      "company": "DXForm Technologies",
+      "role": "Quality Assurance (QA) Analyst Intern",
+      "location": "Cebu City, Philippines",
+      "period": "2025",
+      "bullets": [
+        "Completed 250 hours of On-the-Job Training (OJT), managing test strategy execution across 4 client web and mobile applications.",
+        "Authored structured test plans, executed regression and smoke suites, and logged high-impact defects with reproducible steps in Jira.",
+        "Collaborated closely with software engineering teams to validate bug fixes and enhance cross-browser compatibility standards."
+      ],
+      "keywords": [
+        "QA",
+        "Testing",
+        "Bug Tracking",
+        "Jira",
+        "Regression Testing",
+        "Quality Assurance",
+        "Agile"
+      ]
+    },
+    {
+      "company": "CIT-U College of Computer Studies",
+      "role": "AI & Software Researcher",
+      "location": "Cebu City, Philippines",
+      "period": "2025 - 2026",
+      "bullets": [
+        "Primary author of 'Fusion Rush: Enhancing Proficiency in Boolean Logic Algebra through Gamification', accepted at Scopus-indexed ICETT 2026.",
+        "Developed and presented 'Visual AI Logic Proof Parser & Evaluator' at the Philippine Computing Science Congress (PCSC 2026, Davao).",
+        "Engineered rule-based inference engines and computer vision OCR pipelines to evaluate handwritten mathematical logic proofs."
+      ],
+      "keywords": [
+        "Artificial Intelligence",
+        "Python",
+        "Computer Vision",
+        "OCR",
+        "Inference Engines",
+        "Research",
+        "Scopus"
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "Fusion Rush: Gamified Boolean Logic & AI Tutoring",
+      "period": "2025 - 2026",
+      "role": "Lead Developer & Researcher",
+      "tech": [
+        "Python",
+        "JavaScript",
+        "Gamification Engine",
+        "Discrete Math"
+      ],
+      "description": "Educational AI tutoring software providing gamified learning on the Rules of Inference for Discrete Math. Tested with CIT-U CS students and accepted at the Scopus-indexed ICETT 2026 Conference.",
+      "bullets": [
+        "Built a modular inference verification engine in Python to validate multi-step logic deductions in real-time.",
+        "Designed interactive user interfaces reducing student error rates on symbolic logic exercises by over 30%."
+      ]
+    },
+    {
+      "name": "Visual AI Logic Proof Parser & Evaluator",
+      "period": "2026",
+      "role": "Lead Researcher & AI Engineer",
+      "tech": [
+        "Python",
+        "Visual AI",
+        "OCR",
+        "Computer Vision",
+        "Logic Verification"
+      ],
+      "description": "System using Visual AI to scan, parse, and evaluate validity and score handwritten Discrete Math proofs. Presented at PCSC 2026 in Davao.",
+      "bullets": [
+        "Created an end-to-end OCR and structural parsing pipeline converting handwritten proofs into structured ASTs.",
+        "Automated step-by-step mathematical soundness verification, delivering instant pedagogical feedback."
+      ]
+    },
+    {
+      "name": "TakeIt \u2014 Event Management & Ticketing Platform",
+      "period": "2024",
+      "role": "Full-Stack Developer",
+      "tech": [
+        "React",
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "REST APIs"
+      ],
+      "description": "Scalable event booking platform providing smooth ticketing workflows, seat selection, organizer dashboards, and QR ticket issuance.",
+      "bullets": [
+        "Engineered responsive React frontend integrated with RESTful Node.js backend services and PostgreSQL schemas.",
+        "Implemented real-time ticket inventory locking mechanisms to prevent duplicate bookings under concurrent traffic."
+      ]
+    },
+    {
+      "name": "Nexchef \u2014 Culinary Platform with Synchronized Timers",
+      "period": "2024 - 2025",
+      "role": "Full-Stack Developer",
+      "tech": [
+        "React",
+        "TypeScript",
+        "Node.js",
+        "Supabase",
+        "WebSockets"
+      ],
+      "description": "Interactive recipe and culinary web application featuring live multi-stage recipe timing and community recipe sharing.",
+      "bullets": [
+        "Architected Supabase backend integration for real-time user session sync and state persistence.",
+        "Designed clean component hierarchy with optimized state management."
+      ]
+    },
+    {
+      "name": "Bomberman BattleRoyale",
+      "period": "2023",
+      "role": "Systems & Game Developer",
+      "tech": [
+        "Java",
+        "Multi-threading",
+        "TCP/IP Sockets",
+        "Swing"
+      ],
+      "description": "Multiplayer arcade battle royale game built in Java featuring low-latency socket networking and thread synchronization.",
+      "bullets": [
+        "Implemented multi-threaded socket communication supporting synchronized concurrent player state updates.",
+        "Engineered collision detection, map destruction, and grid mechanics from scratch in Java."
+      ]
+    }
+  ],
+  "skills": {
+    "languages": [
+      "Python",
+      "Java",
+      "C",
+      "C++",
+      "C#",
+      "JavaScript (ES6+)",
+      "TypeScript",
+      "PHP",
+      "SQL",
+      "HTML5",
+      "CSS3",
+      "Bash"
+    ],
+    "frameworks": [
+      "React",
+      "Next.js",
+      "Node.js",
+      "Express",
+      "Django",
+      "FastAPI",
+      "Android Studio"
+    ],
+    "cloud_devops": [
+      "AWS (EC2, S3, VPC, IAM)",
+      "Kubernetes",
+      "Docker",
+      "Linux Administration",
+      "CI/CD",
+      "Supabase",
+      "Git"
+    ],
+    "databases": [
+      "PostgreSQL",
+      "MySQL",
+      "SQLite",
+      "Supabase"
+    ],
+    "testing_tools": [
+      "Quality Assurance",
+      "Jira",
+      "Automated Testing",
+      "Postman",
+      "Jest"
+    ],
+    "core_competencies": [
+      "Data Structures & Algorithms",
+      "Discrete Mathematics",
+      "Systems Architecture",
+      "Site Reliability Engineering",
+      "Visual AI & OCR"
+    ]
+  }
+}
