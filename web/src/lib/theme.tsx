@@ -22,14 +22,9 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    // Read from localStorage or system preference
+    // Light mode is the default theme unless explicitly set to dark by user
     const stored = localStorage.getItem("resutex-theme") as Theme | null;
-    const initial =
-      stored === "dark" || stored === "light"
-        ? stored
-        : window.matchMedia("(prefers-color-scheme: dark)").matches
-        ? "dark"
-        : "light";
+    const initial: Theme = stored === "dark" ? "dark" : "light";
 
     setThemeState(initial);
     applyThemeClass(initial);

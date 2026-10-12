@@ -69,6 +69,7 @@
   height: var(--ss-thumb);
   border-radius: var(--ss-thumb-r);
   background: var(--ss-thumb-color);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
   transition: background-color var(--ss-fade) ease;
 }
 
