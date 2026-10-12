@@ -58,7 +58,7 @@ export default function LandingPage() {
               Architecture
             </a>
             <a
-              href="https://github.com/rgemina/ResuTex"
+              href="https://github.com/RoddneilGemina/ResuTex"
               target="_blank"
               rel="noreferrer"
               className="flex items-center gap-1 hover:text-black transition"
@@ -71,7 +71,7 @@ export default function LandingPage() {
           {/* Top Actions */}
           <div className="flex items-center gap-3 shrink-0">
             <a
-              href="https://github.com/rgemina/ResuTex"
+              href="https://github.com/RoddneilGemina/ResuTex"
               target="_blank"
               rel="noreferrer"
               className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-medium figma-btn-secondary"
@@ -168,7 +168,7 @@ export default function LandingPage() {
               <ArrowRight className="w-4 h-4 text-[#dceeb1]" />
             </Link>
             <a
-              href="https://github.com/rgemina/ResuTex"
+              href="https://github.com/RoddneilGemina/ResuTex"
               target="_blank"
               rel="noreferrer"
               className="px-6 py-3.5 figma-btn-secondary text-sm font-semibold flex items-center gap-2"
@@ -437,7 +437,7 @@ export default function LandingPage() {
               Studio Workspace
             </Link>
             <a
-              href="https://github.com/rgemina/ResuTex"
+              href="https://github.com/RoddneilGemina/ResuTex"
               target="_blank"
               rel="noreferrer"
               className="hover:text-black transition"
