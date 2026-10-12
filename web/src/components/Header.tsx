@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { useResumeStore } from "@/lib/store";
 import { generateResumeLatex } from "@/lib/latexGenerator";
 import confetti from "canvas-confetti";
@@ -110,8 +111,12 @@ export const Header: React.FC<HeaderProps> = ({ onOpenImport }) => {
       {/* 56px Figma Top Nav */}
       <div className="h-14 max-w-[1440px] mx-auto px-4 sm:px-6 flex items-center justify-between gap-4">
         {/* Brand & Wordmark */}
-        <div className="flex items-center gap-3 shrink-0">
-          <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-black text-white shadow-sm">
+        <Link
+          href="/"
+          className="flex items-center gap-3 shrink-0 group hover:opacity-85 transition"
+          title="Back to Landing Page Overview"
+        >
+          <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-black text-white shadow-sm group-hover:scale-105 transition">
             <span className="font-serif font-black text-sm tracking-widest">
               T<sub className="text-[9px] font-sans text-[#dceeb1]">E</sub>X
             </span>
@@ -129,7 +134,7 @@ export const Header: React.FC<HeaderProps> = ({ onOpenImport }) => {
               GEMINI 3.8 FLASH • REPORTLAB ENGINE
             </span>
           </div>
-        </div>
+        </Link>
 
         {/* Segmented Pill Navigation */}
         <nav className="flex items-center bg-[#f7f7f5] p-1 rounded-full border border-[#e6e6e6] relative overflow-hidden">
