@@ -96,33 +96,33 @@ export const CoverLetterEditor: React.FC = () => {
   return (
     <div className="space-y-5 pb-20">
       {/* Signature Figma Pastel Color-Block Story Section (Cream / Warm) */}
-      <div className="bg-[#f4ecd6] rounded-3xl p-6 md:p-8 text-black border border-[#e4dcbf]">
+      <div className="bg-[#f4ecd6] dark:bg-[#282419] rounded-3xl p-6 md:p-8 text-black dark:text-[#f4ecd6] border border-[#e4dcbf] dark:border-[#3e3827]">
         <div className="flex items-center justify-between mb-2">
-          <span className="figma-eyebrow text-black">
+          <span className="figma-eyebrow text-black dark:text-[#f4ecd6]">
             EDITORIAL CORRESPONDENCE
           </span>
-          <span className="figma-caption px-2 py-0.5 rounded-full bg-white text-black border border-black/10">
+          <span className="figma-caption px-2 py-0.5 rounded-full bg-white dark:bg-black text-black dark:text-white border border-black/10 dark:border-white/10">
             LATEX ENGINE
           </span>
         </div>
-        <h2 className="figma-headline font-bold text-black mb-2">
+        <h2 className="figma-headline font-bold text-black dark:text-white mb-2">
           Tailored Cover Letter Studio
         </h2>
-        <p className="figma-body text-black leading-snug max-w-xl">
+        <p className="figma-body text-neutral-800 dark:text-neutral-300 leading-snug max-w-xl">
           Generate an authentic, high-converting letter aligned with your resume experience and customized for the target hiring team.
         </p>
       </div>
 
       {/* Editor Card in White Canvas */}
-      <div className="bg-white rounded-3xl p-6 border border-[#e6e6e6] space-y-5">
-        <div className="flex items-center justify-between pb-3 border-b border-[#e6e6e6]">
-          <span className="figma-eyebrow text-black">LETTER PARAMETERS</span>
+      <div className="bg-white dark:bg-[#101625] rounded-3xl p-6 border border-[#e6e6e6] dark:border-[#1e293b] space-y-5 shadow-sm">
+        <div className="flex items-center justify-between pb-3 border-b border-[#e6e6e6] dark:border-[#1e293b]">
+          <span className="figma-eyebrow text-black dark:text-white">LETTER PARAMETERS</span>
           <div className="flex items-center gap-2">
             <button
               onClick={handleExportLatex}
               className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium figma-btn-secondary"
             >
-              <FileCode className="w-3.5 h-3.5 text-neutral-600" />
+              <FileCode className="w-3.5 h-3.5 text-neutral-600 dark:text-neutral-400" />
               <span>.tex</span>
             </button>
             <button
@@ -130,7 +130,7 @@ export const CoverLetterEditor: React.FC = () => {
               disabled={isCompiling}
               className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-medium figma-btn-primary disabled:opacity-50"
             >
-              <Download className="w-3.5 h-3.5 text-white" />
+              <Download className="w-3.5 h-3.5 text-white dark:text-black" />
               <span>{isCompiling ? "Compiling..." : "Compile PDF"}</span>
             </button>
           </div>
@@ -139,7 +139,7 @@ export const CoverLetterEditor: React.FC = () => {
         {/* Company & Role Details */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div>
-            <label className="figma-caption block text-neutral-600 mb-1">
+            <label className="figma-caption block text-neutral-600 dark:text-neutral-400 mb-1">
               TARGET COMPANY
             </label>
             <input
@@ -149,7 +149,7 @@ export const CoverLetterEditor: React.FC = () => {
             />
           </div>
           <div>
-            <label className="figma-caption block text-neutral-600 mb-1">
+            <label className="figma-caption block text-neutral-600 dark:text-neutral-400 mb-1">
               TARGET ROLE
             </label>
             <input
@@ -159,7 +159,7 @@ export const CoverLetterEditor: React.FC = () => {
             />
           </div>
           <div>
-            <label className="figma-caption block text-neutral-600 mb-1">
+            <label className="figma-caption block text-neutral-600 dark:text-neutral-400 mb-1">
               HIRING CONTACT / TEAM
             </label>
             <input
@@ -178,12 +178,12 @@ export const CoverLetterEditor: React.FC = () => {
         >
           {isGenerating ? (
             <>
-              <div className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+              <div className="w-3.5 h-3.5 border-2 border-white dark:border-black border-t-transparent rounded-full animate-spin" />
               <span>Drafting Letter with Gemini 3.8 Flash...</span>
             </>
           ) : (
             <>
-              <Sparkles className="w-4 h-4 text-[#dceeb1]" />
+              <Sparkles className="w-4 h-4 text-[#dceeb1] dark:text-black" />
               <span>Generate Tailored Letter with Gemini</span>
             </>
           )}
@@ -192,7 +192,7 @@ export const CoverLetterEditor: React.FC = () => {
         {/* Paragraphs */}
         <div className="space-y-4 pt-2">
           <div>
-            <label className="figma-caption block text-neutral-600 mb-1">
+            <label className="figma-caption block text-neutral-600 dark:text-neutral-400 mb-1">
               OPENING HOOK
             </label>
             <textarea
@@ -203,7 +203,7 @@ export const CoverLetterEditor: React.FC = () => {
             />
           </div>
           <div>
-            <label className="figma-caption block text-neutral-600 mb-1">
+            <label className="figma-caption block text-neutral-600 dark:text-neutral-400 mb-1">
               BODY PARAGRAPH 1: SYSTEMS & CORE ARCHITECTURE
             </label>
             <textarea
@@ -214,7 +214,7 @@ export const CoverLetterEditor: React.FC = () => {
             />
           </div>
           <div>
-            <label className="figma-caption block text-neutral-600 mb-1">
+            <label className="figma-caption block text-neutral-600 dark:text-neutral-400 mb-1">
               BODY PARAGRAPH 2: ENGINEERING RIGOR & IMPACT
             </label>
             <textarea
@@ -225,7 +225,7 @@ export const CoverLetterEditor: React.FC = () => {
             />
           </div>
           <div>
-            <label className="figma-caption block text-neutral-600 mb-1">
+            <label className="figma-caption block text-neutral-600 dark:text-neutral-400 mb-1">
               CLOSING CALL-TO-ACTION
             </label>
             <textarea

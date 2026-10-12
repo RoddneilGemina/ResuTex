@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import { Header } from "@/components/Header";
 import { FormEditor } from "@/components/FormEditor";
 import { LatexEditor } from "@/components/LatexEditor";
@@ -10,15 +9,14 @@ import { CoverLetterEditor } from "@/components/CoverLetterEditor";
 import { LivePreviewPane } from "@/components/LivePreviewPane";
 import { ImportModal } from "@/components/ImportModal";
 import { useResumeStore } from "@/lib/store";
-import { ArrowLeft } from "lucide-react";
 
 export default function StudioPage() {
   const [isImportOpen, setIsImportOpen] = useState(false);
   const { activeTab } = useResumeStore();
 
   return (
-    <main className="min-h-screen flex flex-col bg-white text-black">
-      {/* Studio Header: 56px Nav + 36px Marquee Ribbon */}
+    <main className="min-h-screen flex flex-col bg-white dark:bg-[#090d16] text-black dark:text-slate-100 transition-colors duration-200">
+      {/* Studio Header: 56px Nav with SquishSwitch ThemeToggle + 36px Marquee Ribbon */}
       <Header onOpenImport={() => setIsImportOpen(true)} />
 
       {/* Main Workspace: Two-Pane Studio Layout adhering to Figma Design System */}

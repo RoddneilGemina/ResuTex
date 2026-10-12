@@ -23,6 +23,29 @@
   --overlay-scrim: rgba(0, 0, 0, 0.6);
 }
 
+.dark {
+  --primary: #ffffff;
+  --on-primary: #000000;
+  --ink: #f8fafc;
+  --canvas: #090d16;
+  --inverse-canvas: #ffffff;
+  --inverse-ink: #000000;
+  --on-inverse-soft: rgba(255, 255, 255, 0.1);
+  --hairline: #1e293b;
+  --hairline-soft: #141d2e;
+  --surface-soft: #101625;
+  --block-lime: #1d331a;
+  --block-lilac: #261e3e;
+  --block-cream: #282419;
+  --block-pink: #341920;
+  --block-mint: #152d22;
+  --block-coral: #331d17;
+  --block-navy: #0d0c22;
+  --accent-magenta: #ff3d8b;
+  --semantic-success: #22c55e;
+  --overlay-scrim: rgba(0, 0, 0, 0.8);
+}
+
 /* Base Body Typography & Canvas */
 body {
   background-color: var(--canvas);
@@ -117,12 +140,12 @@ body {
 
 /* Modern Document Preview Sheet */
 .resume-paper {
-  background-color: #ffffff;
-  color: #000000;
+  background-color: #ffffff !important;
+  color: #000000 !important;
   box-shadow: 
-    0 1px 3px 0 rgba(0, 0, 0, 0.08),
-    0 8px 24px -4px rgba(0, 0, 0, 0.12),
-    0 2px 6px -1px rgba(0, 0, 0, 0.04);
+    0 1px 3px 0 rgba(0, 0, 0, 0.12),
+    0 8px 24px -4px rgba(0, 0, 0, 0.16),
+    0 2px 6px -1px rgba(0, 0, 0, 0.08);
   width: 100%;
   max-width: 820px;
   min-height: 1060px;
@@ -167,13 +190,19 @@ body {
   border-radius: 8px;
   font-size: 13px;
   padding: 9px 12px;
-  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.dark .figma-input {
+  background-color: #0f1624;
+  border-color: #1e293b;
+  color: #f8fafc;
 }
 
 .figma-input:focus {
-  border-color: var(--ink);
+  border-color: var(--primary);
   outline: none;
-  box-shadow: 0 0 0 1px var(--ink);
+  box-shadow: 0 0 0 1px var(--primary);
 }
 
 /* Figma Pill Buttons */
@@ -182,11 +211,11 @@ body {
   color: var(--on-primary);
   border-radius: 50px;
   font-weight: 500;
-  transition: transform 0.1s ease, background-color 0.15s ease;
+  transition: transform 0.1s ease, background-color 0.15s ease, color 0.15s ease;
 }
 
 .figma-btn-primary:hover {
-  background-color: #1f1f1f;
+  opacity: 0.92;
 }
 
 .figma-btn-primary:active {
@@ -202,9 +231,20 @@ body {
   transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
 }
 
+.dark .figma-btn-secondary {
+  background-color: #131b2c;
+  color: #f8fafc;
+  border-color: #26354a;
+}
+
 .figma-btn-secondary:hover {
   background-color: var(--surface-soft);
   border-color: #d4d4d4;
+}
+
+.dark .figma-btn-secondary:hover {
+  background-color: #1c273d;
+  border-color: #3b4d66;
 }
 
 .figma-btn-secondary:active {
@@ -235,11 +275,11 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.15s ease;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .figma-btn-icon:hover {
-  background-color: #ebebe8;
+  opacity: 0.85;
 }
 
 .figma-btn-icon-inverse {
@@ -271,8 +311,16 @@ body {
   border-radius: 9999px;
 }
 
+.dark ::-webkit-scrollbar-thumb {
+  background: #334155;
+}
+
 ::-webkit-scrollbar-thumb:hover {
   background: #a8a8a2;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #475569;
 }
 
 /* Print CSS */

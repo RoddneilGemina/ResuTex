@@ -96,7 +96,7 @@ export const AITailorPanel: React.FC = () => {
       setAtsResult({
         ...atsResult,
         bulletSuggestions: atsResult.bulletSuggestions.filter(
-          (s) => s.original !== item.original
+          (b) => b.original !== item.original
         ),
       });
     }
@@ -104,14 +104,14 @@ export const AITailorPanel: React.FC = () => {
 
   const handleAddMissingKeyword = (keyword: string) => {
     setResume((prev) => {
-      const skills = { ...prev.skills };
-      const cat = skills["cloud_devops_sre"]
-        ? "cloud_devops_sre"
-        : Object.keys(skills)[0] || "core_technical";
-      if (!skills[cat].includes(keyword)) {
-        skills[cat] = [...skills[cat], keyword];
+      const copy = { ...prev };
+      const skills = { ...copy.skills };
+      const defaultCat = Object.keys(skills)[0] || "tools";
+      const existing = skills[defaultCat] || [];
+      if (!existing.includes(keyword)) {
+        skills[defaultCat] = [...existing, keyword];
       }
-      return { ...prev, skills };
+      return { ...copy, skills };
     });
 
     if (atsResult) {
@@ -140,28 +140,28 @@ export const AITailorPanel: React.FC = () => {
   return (
     <div className="space-y-5 pb-20">
       {/* Signature Figma Pastel Color-Block Story Section (Mint) */}
-      <div className="bg-[#c8e6cd] rounded-3xl p-6 md:p-8 text-black border border-[#b4d6b9]">
+      <div className="bg-[#c8e6cd] dark:bg-[#152d22] rounded-3xl p-6 md:p-8 text-black dark:text-[#c8e6cd] border border-[#b4d6b9] dark:border-[#224b38]">
         <div className="flex items-center justify-between mb-2">
-          <span className="figma-eyebrow text-black">
+          <span className="figma-eyebrow text-black dark:text-[#c8e6cd]">
             AI TAILORING & ATS COMPLIANCE
           </span>
-          <span className="figma-caption px-2 py-0.5 rounded-full bg-white text-black border border-black/10">
+          <span className="figma-caption px-2 py-0.5 rounded-full bg-white dark:bg-black text-black dark:text-white border border-black/10 dark:border-white/10">
             GEMINI 3.8 FLASH
           </span>
         </div>
-        <h2 className="figma-headline font-bold text-black mb-2">
+        <h2 className="figma-headline font-bold text-black dark:text-white mb-2">
           Precision ATS Optimization
         </h2>
-        <p className="figma-body text-black leading-snug max-w-xl">
+        <p className="figma-body text-neutral-800 dark:text-neutral-300 leading-snug max-w-xl">
           Match your resume against any target job listing. Gemini audits keyword frequencies, flags gaps, and rewrites bullets into quantitative achievements.
         </p>
       </div>
 
       {/* Target Job Input Box in White Canvas Card */}
-      <div className="bg-white rounded-3xl p-6 border border-[#e6e6e6] space-y-4">
-        <div className="flex items-center justify-between pb-3 border-b border-[#e6e6e6]">
+      <div className="bg-white dark:bg-[#101625] rounded-3xl p-6 border border-[#e6e6e6] dark:border-[#1e293b] space-y-4 shadow-sm">
+        <div className="flex items-center justify-between pb-3 border-b border-[#e6e6e6] dark:border-[#1e293b]">
           <div className="flex items-center gap-2">
-            <span className="figma-eyebrow text-black">TARGET ROLE PARAMETERS</span>
+            <span className="figma-eyebrow text-black dark:text-white">TARGET ROLE PARAMETERS</span>
           </div>
           <button
             onClick={fillSampleJD}
@@ -173,7 +173,7 @@ export const AITailorPanel: React.FC = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label className="figma-caption block text-neutral-600 mb-1">
+            <label className="figma-caption block text-neutral-600 dark:text-neutral-400 mb-1">
               COMPANY NAME
             </label>
             <input
@@ -184,7 +184,7 @@ export const AITailorPanel: React.FC = () => {
             />
           </div>
           <div>
-            <label className="figma-caption block text-neutral-600 mb-1">
+            <label className="figma-caption block text-neutral-600 dark:text-neutral-400 mb-1">
               TARGET POSITION
             </label>
             <input
@@ -197,7 +197,7 @@ export const AITailorPanel: React.FC = () => {
         </div>
 
         <div>
-          <label className="figma-caption block text-neutral-600 mb-1">
+          <label className="figma-caption block text-neutral-600 dark:text-neutral-400 mb-1">
             JOB DESCRIPTION & REQUIREMENTS
           </label>
           <textarea
@@ -216,12 +216,12 @@ export const AITailorPanel: React.FC = () => {
         >
           {isTailoring ? (
             <>
-              <div className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+              <div className="w-3.5 h-3.5 border-2 border-white dark:border-black border-t-transparent rounded-full animate-spin" />
               <span>Analyzing Keywords with Gemini 3.8 Flash...</span>
             </>
           ) : (
             <>
-              <Sparkles className="w-4 h-4 text-[#dceeb1]" />
+              <Sparkles className="w-4 h-4 text-[#dceeb1] dark:text-black" />
               <span>Run Intelligent ATS Scan & Keyword Analysis</span>
             </>
           )}
@@ -232,30 +232,30 @@ export const AITailorPanel: React.FC = () => {
       {atsResult && (
         <div className="space-y-4">
           {/* Match Score Card: Signature Lime Block */}
-          <div className="bg-[#dceeb1] rounded-3xl p-6 text-black border border-[#cadca0]">
+          <div className="bg-[#dceeb1] dark:bg-[#1d331a] rounded-3xl p-6 text-black dark:text-[#dceeb1] border border-[#cadca0] dark:border-[#2b4c26]">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-5">
               <div className="space-y-1.5 text-center sm:text-left">
-                <span className="figma-caption text-black font-bold">
+                <span className="figma-caption text-black dark:text-[#dceeb1] font-bold">
                   ATS ALIGNMENT SCORE
                 </span>
-                <h3 className="figma-card-title text-black">
+                <h3 className="figma-card-title text-black dark:text-white">
                   {atsResult.score >= 85
                     ? "Top Tier Alignment (Ranked 95th Percentile)"
                     : atsResult.score >= 70
                     ? "Strong Candidate Match"
                     : "Moderate Alignment — Recommended Tweaks Below"}
                 </h3>
-                <p className="figma-body-sm text-black max-w-md leading-relaxed">
+                <p className="figma-body-sm text-neutral-800 dark:text-neutral-300 max-w-md leading-relaxed">
                   {atsResult.summary}
                 </p>
               </div>
 
               {/* Bold Score Metric */}
-              <div className="w-24 h-24 rounded-full bg-white text-black border border-black/10 flex flex-col items-center justify-center shrink-0 shadow-sm">
+              <div className="w-24 h-24 rounded-full bg-white dark:bg-[#0c121e] text-black dark:text-white border border-black/10 dark:border-white/10 flex flex-col items-center justify-center shrink-0 shadow-sm">
                 <span className="text-3xl font-black tracking-tight">
                   {atsResult.score}%
                 </span>
-                <span className="figma-caption text-[9px] text-neutral-500">
+                <span className="figma-caption text-[9px] text-neutral-500 dark:text-neutral-400">
                   MATCH
                 </span>
               </div>
@@ -265,12 +265,12 @@ export const AITailorPanel: React.FC = () => {
           {/* Keywords Breakdown */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {/* Matched Keywords */}
-            <div className="bg-white rounded-3xl p-5 border border-[#e6e6e6] space-y-3">
+            <div className="bg-white dark:bg-[#101625] rounded-3xl p-5 border border-[#e6e6e6] dark:border-[#1e293b] space-y-3 shadow-sm">
               <div className="flex items-center gap-2">
                 <span className="w-4 h-4 rounded-full bg-[#1ea64a] text-white flex items-center justify-center text-[10px] font-bold">
                   ✓
                 </span>
-                <span className="figma-eyebrow text-black">
+                <span className="figma-eyebrow text-black dark:text-white">
                   MATCHED KEYWORDS ({atsResult.matchedKeywords.length})
                 </span>
               </div>
@@ -278,7 +278,7 @@ export const AITailorPanel: React.FC = () => {
                 {atsResult.matchedKeywords.map((k, i) => (
                   <span
                     key={i}
-                    className="px-3 py-1 rounded-full text-xs font-medium bg-[#c8e6cd] text-black border border-[#b6d6bc]"
+                    className="px-3 py-1 rounded-full text-xs font-medium bg-[#c8e6cd] dark:bg-[#152d22] text-black dark:text-[#c8e6cd] border border-[#b6d6bc] dark:border-[#224b38]"
                   >
                     ✓ {k}
                   </span>
@@ -287,12 +287,12 @@ export const AITailorPanel: React.FC = () => {
             </div>
 
             {/* Missing Keywords */}
-            <div className="bg-white rounded-3xl p-5 border border-[#e6e6e6] space-y-3">
+            <div className="bg-white dark:bg-[#101625] rounded-3xl p-5 border border-[#e6e6e6] dark:border-[#1e293b] space-y-3 shadow-sm">
               <div className="flex items-center gap-2">
                 <span className="w-4 h-4 rounded-full bg-[#ff3d8b] text-white flex items-center justify-center text-[10px] font-bold">
                   !
                 </span>
-                <span className="figma-eyebrow text-black">
+                <span className="figma-eyebrow text-black dark:text-white">
                   MISSING KEYWORDS ({atsResult.missingKeywords.length})
                 </span>
               </div>
@@ -302,7 +302,7 @@ export const AITailorPanel: React.FC = () => {
                     key={i}
                     onClick={() => handleAddMissingKeyword(k)}
                     title="Click to insert into Resume Skills"
-                    className="px-3 py-1 rounded-full text-xs font-medium bg-[#efd4d4] hover:bg-[#e6c3c3] text-black border border-[#dec0c0] flex items-center gap-1 transition"
+                    className="px-3 py-1 rounded-full text-xs font-medium bg-[#efd4d4] dark:bg-[#341920] hover:bg-[#e6c3c3] dark:hover:bg-[#45212b] text-black dark:text-[#efd4d4] border border-[#dec0c0] dark:border-[#522530] flex items-center gap-1 transition"
                   >
                     <span>+ {k}</span>
                   </button>
@@ -313,10 +313,10 @@ export const AITailorPanel: React.FC = () => {
 
           {/* Bullet Optimization Recommendations */}
           {atsResult.bulletSuggestions && atsResult.bulletSuggestions.length > 0 && (
-            <div className="bg-white rounded-3xl p-6 border border-[#e6e6e6] space-y-4">
-              <div className="flex items-center gap-2 pb-2 border-b border-[#e6e6e6]">
-                <TrendingUp className="w-4 h-4 text-black" />
-                <span className="figma-eyebrow text-black">
+            <div className="bg-white dark:bg-[#101625] rounded-3xl p-6 border border-[#e6e6e6] dark:border-[#1e293b] space-y-4 shadow-sm">
+              <div className="flex items-center gap-2 pb-2 border-b border-[#e6e6e6] dark:border-[#1e293b]">
+                <TrendingUp className="w-4 h-4 text-black dark:text-white" />
+                <span className="figma-eyebrow text-black dark:text-white">
                   RECOMMENDED BULLET ENHANCEMENTS ({atsResult.bulletSuggestions.length})
                 </span>
               </div>
@@ -325,32 +325,32 @@ export const AITailorPanel: React.FC = () => {
                 {atsResult.bulletSuggestions.map((item, idx) => (
                   <div
                     key={idx}
-                    className="p-5 rounded-2xl bg-[#f7f7f5] border border-[#e6e6e6] space-y-3"
+                    className="p-5 rounded-2xl bg-[#f7f7f5] dark:bg-[#0c121e] border border-[#e6e6e6] dark:border-[#1e293b] space-y-3"
                   >
-                    <div className="figma-caption text-neutral-500">
+                    <div className="figma-caption text-neutral-500 dark:text-neutral-400">
                       {item.section.toUpperCase()}
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
                       {/* Current */}
-                      <div className="p-3.5 rounded-xl bg-white border border-[#e6e6e6] text-neutral-800 leading-relaxed">
-                        <span className="figma-caption text-neutral-500 block mb-1">
+                      <div className="p-3.5 rounded-xl bg-white dark:bg-[#101625] border border-[#e6e6e6] dark:border-[#1e293b] text-neutral-800 dark:text-neutral-200 leading-relaxed">
+                        <span className="figma-caption text-neutral-500 dark:text-neutral-400 block mb-1">
                           CURRENT FORMULATION
                         </span>
                         {item.original}
                       </div>
 
                       {/* Suggested */}
-                      <div className="p-3.5 rounded-xl bg-[#c8e6cd] border border-[#b6d6bc] text-black leading-relaxed font-medium">
-                        <span className="figma-caption text-black block mb-1 flex items-center gap-1 font-bold">
-                          <Zap className="w-3 h-3 text-black" /> QUANTITATIVE RECOMMENDATION
+                      <div className="p-3.5 rounded-xl bg-[#c8e6cd] dark:bg-[#152d22] border border-[#b6d6bc] dark:border-[#224b38] text-black dark:text-[#c8e6cd] leading-relaxed font-medium">
+                        <span className="figma-caption text-black dark:text-[#c8e6cd] block mb-1 flex items-center gap-1 font-bold">
+                          <Zap className="w-3 h-3 text-black dark:text-[#c8e6cd]" /> QUANTITATIVE RECOMMENDATION
                         </span>
                         {item.suggested}
                       </div>
                     </div>
 
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pt-1">
-                      <p className="text-xs text-neutral-700 italic">
+                      <p className="text-xs text-neutral-700 dark:text-neutral-300 italic">
                         {item.reason}
                       </p>
                       <button

@@ -26,18 +26,18 @@ export const LivePreviewPane: React.FC = () => {
   };
 
   return (
-    <div className="h-full flex flex-col bg-white rounded-3xl overflow-hidden border border-[#e6e6e6] shadow-sm">
-      {/* 52px Toolbar adhering to Figma monochrome standard */}
-      <div className="flex items-center justify-between px-4 py-2.5 bg-white border-b border-[#e6e6e6]">
+    <div className="h-full flex flex-col bg-white dark:bg-[#0c121e] rounded-3xl overflow-hidden border border-[#e6e6e6] dark:border-[#1e293b] shadow-sm transition-colors">
+      {/* 52px Toolbar */}
+      <div className="flex items-center justify-between px-4 py-2.5 bg-white dark:bg-[#0c121e] border-b border-[#e6e6e6] dark:border-[#1e293b] transition-colors">
         <div className="flex items-center gap-2.5">
           {/* Pill Mode Switcher */}
-          <div className="flex items-center bg-[#f7f7f5] p-1 rounded-full border border-[#e6e6e6]">
+          <div className="flex items-center bg-[#f7f7f5] dark:bg-[#131b2b] p-1 rounded-full border border-[#e6e6e6] dark:border-[#1e293b]">
             <button
               onClick={() => setPreviewMode("visual")}
               className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium transition ${
                 previewMode === "visual"
-                  ? "bg-black text-white shadow-sm"
-                  : "text-black hover:text-neutral-700"
+                  ? "bg-black dark:bg-white text-white dark:text-black shadow-sm"
+                  : "text-black dark:text-neutral-300 hover:text-neutral-700 dark:hover:text-white"
               }`}
             >
               <FileText className="w-3.5 h-3.5" />
@@ -47,8 +47,8 @@ export const LivePreviewPane: React.FC = () => {
               onClick={() => setPreviewMode("pdf")}
               className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium transition ${
                 previewMode === "pdf"
-                  ? "bg-black text-white shadow-sm"
-                  : "text-black hover:text-neutral-700"
+                  ? "bg-black dark:bg-white text-white dark:text-black shadow-sm"
+                  : "text-black dark:text-neutral-300 hover:text-neutral-700 dark:hover:text-white"
               }`}
             >
               <FileCheck2 className="w-3.5 h-3.5" />
@@ -56,8 +56,8 @@ export const LivePreviewPane: React.FC = () => {
             </button>
           </div>
 
-          {/* Document Health Badge with Figma Semantic Green Checkmark */}
-          <div className="hidden xl:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#f7f7f5] border border-[#e6e6e6] text-[11px] font-mono text-black">
+          {/* Document Health Badge */}
+          <div className="hidden xl:flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#f7f7f5] dark:bg-[#131b2b] border border-[#e6e6e6] dark:border-[#1e293b] text-[11px] font-mono text-black dark:text-white">
             <span className="w-3.5 h-3.5 rounded-full bg-[#1ea64a] text-white flex items-center justify-center text-[9px] font-bold">
               ✓
             </span>
@@ -69,31 +69,31 @@ export const LivePreviewPane: React.FC = () => {
         <div className="flex items-center gap-1">
           <button
             onClick={() => setZoom((z) => Math.max(60, z - 10))}
-            className="w-8 h-8 figma-btn-icon text-black"
+            className="w-8 h-8 figma-btn-icon text-black dark:text-white"
             title="Zoom Out"
           >
             <ZoomOut className="w-3.5 h-3.5" />
           </button>
-          <span className="figma-caption text-[11px] text-neutral-600 w-10 text-center select-none">
+          <span className="figma-caption text-[11px] text-neutral-600 dark:text-neutral-300 w-10 text-center select-none">
             {zoom}%
           </span>
           <button
             onClick={() => setZoom((z) => Math.min(130, z + 10))}
-            className="w-8 h-8 figma-btn-icon text-black"
+            className="w-8 h-8 figma-btn-icon text-black dark:text-white"
             title="Zoom In"
           >
             <ZoomIn className="w-3.5 h-3.5" />
           </button>
           <button
             onClick={() => setZoom(95)}
-            className="w-8 h-8 figma-btn-icon text-black"
+            className="w-8 h-8 figma-btn-icon text-black dark:text-white"
             title="Reset Zoom"
           >
             <Maximize2 className="w-3.5 h-3.5" />
           </button>
           <button
             onClick={handlePrint}
-            className="w-8 h-8 figma-btn-icon text-black ml-1"
+            className="w-8 h-8 figma-btn-icon text-black dark:text-white ml-1"
             title="Print Document (Ctrl+P)"
           >
             <Printer className="w-3.5 h-3.5" />
@@ -101,11 +101,11 @@ export const LivePreviewPane: React.FC = () => {
         </div>
       </div>
 
-      {/* Warm Desk Backdrop Canvas (Figma block-cream / surface-soft) */}
-      <div className="flex-1 overflow-auto bg-[#f7f7f5] p-4 sm:p-8 flex justify-center items-start relative select-text">
+      {/* Desk Backdrop Canvas */}
+      <div className="flex-1 overflow-auto bg-[#f7f7f5] dark:bg-[#060911] p-4 sm:p-8 flex justify-center items-start relative select-text transition-colors">
         {previewMode === "pdf" && pdfBlobUrl ? (
           <div
-            className="w-full h-full min-h-[900px] bg-white rounded-xl overflow-hidden border border-[#e6e6e6] shadow-md"
+            className="w-full h-full min-h-[900px] bg-white rounded-xl overflow-hidden border border-[#e6e6e6] dark:border-[#1e293b] shadow-md"
             style={{ transform: `scale(${zoom / 100})`, transformOrigin: "top center" }}
           >
             <iframe
@@ -115,14 +115,14 @@ export const LivePreviewPane: React.FC = () => {
             />
           </div>
         ) : previewMode === "pdf" && !pdfBlobUrl ? (
-          <div className="my-auto text-center space-y-3 py-20 max-w-sm mx-auto p-6 bg-white rounded-2xl border border-[#e6e6e6] shadow-sm">
-            <div className="w-12 h-12 rounded-full bg-[#f4ecd6] text-black flex items-center justify-center mx-auto">
+          <div className="my-auto text-center space-y-3 py-20 max-w-sm mx-auto p-6 bg-white dark:bg-[#0f172a] rounded-2xl border border-[#e6e6e6] dark:border-[#1e293b] shadow-sm">
+            <div className="w-12 h-12 rounded-full bg-[#f4ecd6] dark:bg-[#282419] text-black dark:text-white flex items-center justify-center mx-auto">
               <FileCheck2 className="w-6 h-6" />
             </div>
-            <h4 className="figma-headline text-lg font-bold text-black">
+            <h4 className="figma-headline text-lg font-bold text-black dark:text-white">
               No PDF Buffer Generated Yet
             </h4>
-            <p className="text-xs text-neutral-600">
+            <p className="text-xs text-neutral-600 dark:text-neutral-400">
               Click &quot;Compile PDF&quot; in the header bar to generate an authentic ReportLab ATS PDF file.
             </p>
           </div>
