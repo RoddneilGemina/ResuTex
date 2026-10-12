@@ -8,11 +8,12 @@ import { AITailorPanel } from "@/components/AITailorPanel";
 import { CoverLetterEditor } from "@/components/CoverLetterEditor";
 import { LivePreviewPane } from "@/components/LivePreviewPane";
 import { ImportModal } from "@/components/ImportModal";
+import { StudioEmptyState } from "@/components/StudioEmptyState";
 import { useResumeStore } from "@/lib/store";
 
 export default function StudioPage() {
   const [isImportOpen, setIsImportOpen] = useState(false);
-  const { activeTab } = useResumeStore();
+  const { activeTab, hasActiveResume } = useResumeStore();
 
   return (
     <main className="min-h-screen flex flex-col bg-white dark:bg-[#090d16] text-black dark:text-slate-100 transition-colors duration-200">
@@ -23,10 +24,16 @@ export default function StudioPage() {
       <div className="flex-1 max-w-[1440px] w-full mx-auto p-3 sm:p-5 grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
         {/* Left Pane: Interactive Editor / Tailor Suite */}
         <section className="lg:col-span-6 xl:col-span-6 flex flex-col h-[calc(100vh-112px)] overflow-y-auto pr-1">
-          {activeTab === "form" && <FormEditor />}
-          {activeTab === "latex" && <LatexEditor />}
-          {activeTab === "tailor" && <AITailorPanel />}
-          {activeTab === "cover_letter" && <CoverLetterEditor />}
+          {!hasActiveResume ? (
+            <StudioEmptyState onOpenImport={() => setIsImportOpen(true)} />
+          ) : (
+            <>
+              {activeTab === "form" && <FormEditor />}
+              {activeTab === "latex" && <LatexEditor />}
+              {activeTab === "tailor" && <AITailorPanel />}
+              {activeTab === "cover_letter" && <CoverLetterEditor />}
+            </>
+          )}
         </section>
 
         {/* Right Pane: Live Paper & Compiled PDF Preview Studio */}

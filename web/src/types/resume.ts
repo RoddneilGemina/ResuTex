@@ -100,3 +100,34 @@ export interface CoverLetterData {
   bodyParagraph2: string;
   closingParagraph: string;
 }
+
+export type ResumeSectionKey =
+  | "personal"
+  | "experience"
+  | "projects"
+  | "skills"
+  | "education"
+  | "certifications"
+  | "research"
+  | "volunteering";
+
+export const emptyResumeData: ResumeData = {
+  personal: {
+    name: "",
+    email: "",
+    phone: "",
+    location: "",
+    headline: "",
+    portfolio: "",
+    github: "",
+    linkedin: "",
+    summary: "",
+  },
+  experience: [],
+  projects: [],
+  skills: {},
+  education: [],
+  research: [],
+  certifications: [],
+  volunteering: [],
+};

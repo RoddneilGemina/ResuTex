@@ -1,10 +1,18 @@
 import { create } from "zustand";
-import { ResumeData, ATSMatchResult, CoverLetterData } from "@/types/resume";
+import {
+  ResumeData,
+  ATSMatchResult,
+  CoverLetterData,
+  ResumeSectionKey,
+  emptyResumeData,
+} from "@/types/resume";
 import { defaultResumeData } from "@/data/defaultProfile";
 
 interface ResumeStore {
-  resume: ResumeData;
-  history: ResumeData[];
+  resume: ResumeData | null;
+  hasActiveResume: boolean;
+  activeSections: ResumeSectionKey[];
+  history: (ResumeData | null)[];
   historyIndex: number;
   activeTab: "form" | "latex" | "tailor" | "cover_letter";
   previewMode: "visual" | "pdf";
@@ -23,7 +31,13 @@ interface ResumeStore {
 
   // Actions
   setResume: (updater: (prev: ResumeData) => ResumeData) => void;
+  createFromScratch: () => void;
+  loadUploadedResume: (data: ResumeData) => void;
+  loadSampleProfile: () => void;
+  resetToEmpty: () => void;
   resetToDefault: () => void;
+  addSection: (key: ResumeSectionKey) => void;
+  removeSection: (key: ResumeSectionKey) => void;
   setActiveTab: (tab: "form" | "latex" | "tailor" | "cover_letter") => void;
   setPreviewMode: (mode: "visual" | "pdf") => void;
   setPdfBlobUrl: (url: string | null) => void;
@@ -53,9 +67,12 @@ const defaultCoverLetter: CoverLetterData = {
 };
 
 export const useResumeStore = create<ResumeStore>((set, get) => ({
-  resume: defaultResumeData,
-  history: [defaultResumeData],
-  historyIndex: 0,
+  // By default, no resume is on the screen until user uploads or creates from scratch
+  resume: null,
+  hasActiveResume: false,
+  activeSections: [],
+  history: [],
+  historyIndex: -1,
   activeTab: "form",
   previewMode: "visual",
   pdfBlobUrl: null,
@@ -72,22 +89,173 @@ export const useResumeStore = create<ResumeStore>((set, get) => ({
   coverLetter: defaultCoverLetter,
 
   setResume: (updater) => {
-    const prev = get().resume;
+    const prev = get().resume || emptyResumeData;
     const next = updater(prev);
     const history = get().history.slice(0, get().historyIndex + 1);
     set({
       resume: next,
+      hasActiveResume: true,
       history: [...history, next],
       historyIndex: history.length,
     });
   },
 
-  resetToDefault: () => {
+  createFromScratch: () => {
+    const blank = { ...emptyResumeData, personal: { ...emptyResumeData.personal } };
     set({
-      resume: defaultResumeData,
-      history: [defaultResumeData],
+      resume: blank,
+      hasActiveResume: true,
+      activeSections: ["personal"],
+      history: [blank],
       historyIndex: 0,
       atsResult: null,
+      pdfBlobUrl: null,
+    });
+  },
+
+  loadUploadedResume: (data) => {
+    const detected: ResumeSectionKey[] = ["personal"];
+    if (data.experience && data.experience.length > 0) detected.push("experience");
+    if (data.projects && data.projects.length > 0) detected.push("projects");
+    if (data.skills && Object.keys(data.skills).length > 0) detected.push("skills");
+    if (data.education && data.education.length > 0) detected.push("education");
+    if (data.certifications && data.certifications.length > 0) detected.push("certifications");
+    if (data.research && data.research.length > 0) detected.push("research");
+    if (data.volunteering && data.volunteering.length > 0) detected.push("volunteering");
+
+    set({
+      resume: data,
+      hasActiveResume: true,
+      activeSections: detected,
+      history: [data],
+      historyIndex: 0,
+      atsResult: null,
+      pdfBlobUrl: null,
+    });
+  },
+
+  loadSampleProfile: () => {
+    const sample = defaultResumeData;
+    const detected: ResumeSectionKey[] = [
+      "personal",
+      "experience",
+      "projects",
+      "skills",
+      "education",
+      "research",
+      "certifications",
+    ];
+    set({
+      resume: sample,
+      hasActiveResume: true,
+      activeSections: detected,
+      history: [sample],
+      historyIndex: 0,
+      atsResult: null,
+      pdfBlobUrl: null,
+    });
+  },
+
+  resetToEmpty: () => {
+    set({
+      resume: null,
+      hasActiveResume: false,
+      activeSections: [],
+      history: [],
+      historyIndex: -1,
+      atsResult: null,
+      pdfBlobUrl: null,
+    });
+  },
+
+  resetToDefault: () => {
+    get().loadSampleProfile();
+  },
+
+  addSection: (key) => {
+    const { activeSections, resume } = get();
+    const currentResume = resume || emptyResumeData;
+    const updatedSections = activeSections.includes(key)
+      ? activeSections
+      : [...activeSections, key];
+
+    const copy = { ...currentResume };
+
+    // Initialize with a blank item if currently empty so user immediately has an entry
+    if (key === "experience" && (!copy.experience || copy.experience.length === 0)) {
+      copy.experience = [
+        {
+          company: "",
+          role: "",
+          location: "",
+          period: "",
+          bullets: [""],
+          keywords: [],
+        },
+      ];
+    } else if (key === "projects" && (!copy.projects || copy.projects.length === 0)) {
+      copy.projects = [
+        {
+          name: "",
+          role: "Developer",
+          tech: [],
+          period: "",
+          bullets: [""],
+        },
+      ];
+    } else if (key === "skills" && (!copy.skills || Object.keys(copy.skills).length === 0)) {
+      copy.skills = {
+        languages_and_frameworks: [],
+      };
+    } else if (key === "education" && (!copy.education || copy.education.length === 0)) {
+      copy.education = [
+        {
+          institution: "",
+          degree: "",
+          location: "",
+          period: "",
+          highlights: [],
+        },
+      ];
+    } else if (key === "certifications" && (!copy.certifications || copy.certifications.length === 0)) {
+      copy.certifications = [
+        {
+          title: "",
+          issuer: "",
+          date: "",
+        },
+      ];
+    } else if (key === "research" && (!copy.research || copy.research.length === 0)) {
+      copy.research = [
+        {
+          title: "",
+          role: "",
+          location: "",
+          paper: "",
+          description: "",
+        },
+      ];
+    } else if (key === "volunteering" && (!copy.volunteering || copy.volunteering.length === 0)) {
+      copy.volunteering = [
+        {
+          organization: "",
+          period: "",
+          bullets: [""],
+        },
+      ];
+    }
+
+    set({
+      resume: copy,
+      hasActiveResume: true,
+      activeSections: updatedSections,
+    });
+  },
+
+  removeSection: (key) => {
+    const { activeSections } = get();
+    set({
+      activeSections: activeSections.filter((k) => k !== key),
     });
   },
 
@@ -113,9 +281,11 @@ export const useResumeStore = create<ResumeStore>((set, get) => ({
   undo: () => {
     const { historyIndex, history } = get();
     if (historyIndex > 0) {
+      const prev = history[historyIndex - 1];
       set({
         historyIndex: historyIndex - 1,
-        resume: history[historyIndex - 1],
+        resume: prev,
+        hasActiveResume: prev !== null,
       });
     }
   },
@@ -123,9 +293,11 @@ export const useResumeStore = create<ResumeStore>((set, get) => ({
   redo: () => {
     const { historyIndex, history } = get();
     if (historyIndex < history.length - 1) {
+      const next = history[historyIndex + 1];
       set({
         historyIndex: historyIndex + 1,
-        resume: history[historyIndex + 1],
+        resume: next,
+        hasActiveResume: next !== null,
       });
     }
   },

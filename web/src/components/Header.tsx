@@ -30,7 +30,9 @@ export const Header: React.FC<HeaderProps> = ({ onOpenImport }) => {
     resume,
     activeTab,
     setActiveTab,
+    hasActiveResume,
     resetToDefault,
+    resetToEmpty,
     undo,
     redo,
     historyIndex,
@@ -42,12 +44,16 @@ export const Header: React.FC<HeaderProps> = ({ onOpenImport }) => {
   } = useResumeStore();
 
   const handleExportLatex = () => {
+    if (!hasActiveResume || !resume) {
+      alert("Please upload a resume or create one from scratch first.");
+      return;
+    }
     const latex = generateResumeLatex(resume);
     const blob = new Blob([latex], { type: "application/x-tex;charset=utf-8" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `${resume.personal.name.replace(/\s+/g, "_")}_resume.tex`;
+    a.download = `${(resume.personal.name || "Resume").replace(/\s+/g, "_")}_resume.tex`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -55,6 +61,10 @@ export const Header: React.FC<HeaderProps> = ({ onOpenImport }) => {
   };
 
   const handleCompilePdf = async () => {
+    if (!hasActiveResume || !resume) {
+      alert("Please upload a resume or create one from scratch first.");
+      return;
+    }
     setIsCompiling(true);
     try {
       const res = await fetch("/api/compile", {
@@ -194,15 +204,33 @@ export const Header: React.FC<HeaderProps> = ({ onOpenImport }) => {
             </button>
           </div>
 
-          {/* Reset button */}
-          <button
-            onClick={resetToDefault}
-            title="Reset to Master Candidate Profile"
-            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium figma-btn-secondary"
-          >
-            <RotateCcw className="w-3 h-3 text-neutral-600 dark:text-neutral-400" />
-            <span>Reset</span>
-          </button>
+          {/* New Resume Button */}
+          {hasActiveResume && (
+            <button
+              onClick={() => {
+                if (confirm("Start over with an empty canvas? Your current document will be cleared.")) {
+                  resetToEmpty();
+                }
+              }}
+              title="Start a new resume (clears current document)"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium figma-btn-secondary"
+            >
+              <RotateCcw className="w-3 h-3 text-neutral-600 dark:text-neutral-400" />
+              <span>New</span>
+            </button>
+          )}
+
+          {/* Reset button (Load Sample) */}
+          {hasActiveResume && (
+            <button
+              onClick={resetToDefault}
+              title="Reset to Master Candidate Profile"
+              className="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium figma-btn-secondary"
+            >
+              <RotateCcw className="w-3 h-3 text-neutral-600 dark:text-neutral-400" />
+              <span>Sample</span>
+            </button>
+          )}
 
           {/* Import Pill */}
           <button

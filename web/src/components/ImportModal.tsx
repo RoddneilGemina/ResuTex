@@ -11,7 +11,7 @@ interface ImportModalProps {
 }
 
 export const ImportModal: React.FC<ImportModalProps> = ({ isOpen, onClose }) => {
-  const { setResume } = useResumeStore();
+  const { loadUploadedResume } = useResumeStore();
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [pastedText, setPastedText] = useState("");
   const [isProcessing, setIsProcessing] = useState(false);
@@ -42,7 +42,7 @@ export const ImportModal: React.FC<ImportModalProps> = ({ isOpen, onClose }) => 
         if (selectedFile.name.endsWith(".json")) {
           const text = await selectedFile.text();
           const json = JSON.parse(text);
-          setResume(() => json);
+          loadUploadedResume(json);
           confetti({ particleCount: 50, spread: 60, origin: { y: 0.3 } });
           onClose();
           return;
@@ -59,7 +59,7 @@ export const ImportModal: React.FC<ImportModalProps> = ({ isOpen, onClose }) => 
 
         const data = await res.json();
         if (data.success && data.data) {
-          setResume(() => data.data);
+          loadUploadedResume(data.data);
           confetti({ particleCount: 60, spread: 70, origin: { y: 0.25 } });
           onClose();
         } else {
@@ -75,7 +75,7 @@ export const ImportModal: React.FC<ImportModalProps> = ({ isOpen, onClose }) => 
 
         const data = await res.json();
         if (data.success && data.data) {
-          setResume(() => data.data);
+          loadUploadedResume(data.data);
           confetti({ particleCount: 60, spread: 70, origin: { y: 0.25 } });
           onClose();
         } else {

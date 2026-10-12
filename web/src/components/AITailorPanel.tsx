@@ -28,6 +28,10 @@ export const AITailorPanel: React.FC = () => {
   } = useResumeStore();
 
   const handleRunTailor = async () => {
+    if (!resume) {
+      alert("Please upload a resume or create from scratch first.");
+      return;
+    }
     if (!targetJob.description.trim()) {
       alert("Please paste a target Job Description to analyze.");
       return;

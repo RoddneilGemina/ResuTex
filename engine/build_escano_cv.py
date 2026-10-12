@@ -274,6 +274,17 @@ def create_html_cv():
 
   <div class="entry">
     <div class="entry-header">
+      <b>ResuTex – Lead Architect & Full-Stack Developer</b> | Next.js 16, Python, ReportLab, Gemini Flash, Supabase, REST APIs
+    </div>
+    <ul class="bullets">
+      <li>Architected an autonomous ATS resume studio combining Python ReportLab and LaTeX engines to dynamically compile and format tailored resumes and cover letters.</li>
+      <li>Engineered dynamic ATS match scoring and qualification extraction algorithms against job postings, integrating LLM-assisted tailoring pipelines with Google Gemini Flash.</li>
+      <li>Integrated Supabase REST APIs and local failover ledgers for real-time application tracking, status telemetry, and automated cold outreach drafting.</li>
+    </ul>
+  </div>
+
+  <div class="entry">
+    <div class="entry-header">
       <b>TakeIt – Full-Stack Developer & Platform Architect</b> | React, Node.js, Express, PostgreSQL, REST APIs
     </div>
     <ul class="bullets">
@@ -352,7 +363,7 @@ def create_html_cv():
   </div>
 
   <!-- Research Conferences & Competitions -->
-  <div class="section-title">RESEARCH CONFERENCES & COMPETITIONS</div>
+  <div class="section-title" style="page-break-before: always;">RESEARCH CONFERENCES & COMPETITIONS</div>
 
   <div class="entry">
     <div class="entry-header">
@@ -373,7 +384,7 @@ def create_html_cv():
   </div>
 
   <!-- Certifications -->
-  <div class="section-title" style="page-break-before: always;">CERTIFICATIONS</div>
+  <div class="section-title">CERTIFICATIONS</div>
 
   <div class="cert-row">
     <span class="cert-name">PhilNITS Fundamental Information Technology Engineers (FE) Certification</span>
@@ -717,6 +728,7 @@ def create_docx_cv(output_path):
         ]
     )
 
+    doc.add_page_break()
     # 2. RELEVANT PROJECTS
     add_sec_title("RELEVANT PROJECTS")
 
@@ -732,6 +744,16 @@ def create_docx_cv(output_path):
         r2.font.size = Pt(10.2)
         for b in bullets:
             add_bullet(b)
+
+    add_project(
+        "ResuTex – Lead Architect & Full-Stack Developer",
+        "Next.js 16, Python, ReportLab, Gemini Flash, Supabase, REST APIs",
+        [
+            "Architected an autonomous ATS resume studio combining Python ReportLab and LaTeX engines to dynamically compile and format tailored resumes and cover letters.",
+            "Engineered dynamic ATS match scoring and qualification extraction algorithms against job postings, integrating LLM-assisted tailoring pipelines with Google Gemini Flash.",
+            "Integrated Supabase REST APIs and local failover ledgers for real-time application tracking, status telemetry, and automated cold outreach drafting."
+        ]
+    )
 
     add_project(
         "TakeIt – Full-Stack Developer & Platform Architect",
@@ -792,6 +814,7 @@ def create_docx_cv(output_path):
     add_two_column_line("Cebu Institute of Technology - University", " – BS Computer Science", "2022 – 2026")
     add_two_column_line("Philippine Science High School - Central Visayas Campus", " – STEM Strand (With Honors)", "2016 – 2022", space_before=Pt(2))
 
+    doc.add_page_break()
     # 5. RESEARCH CONFERENCES & COMPETITIONS
     add_sec_title("RESEARCH CONFERENCES & COMPETITIONS")
 

@@ -47,6 +47,10 @@ export const CoverLetterEditor: React.FC = () => {
   };
 
   const handleExportLatex = () => {
+    if (!resume) {
+      alert("Please upload a resume or create from scratch first.");
+      return;
+    }
     const latex = generateCoverLetterLatex(resume, coverLetter);
     const blob = new Blob([latex], { type: "application/x-tex;charset=utf-8" });
     const url = URL.createObjectURL(blob);
@@ -60,6 +64,10 @@ export const CoverLetterEditor: React.FC = () => {
   };
 
   const handleCompilePdf = async () => {
+    if (!resume) {
+      alert("Please upload a resume or create from scratch first.");
+      return;
+    }
     setIsCompiling(true);
     try {
       const res = await fetch("/api/compile", {

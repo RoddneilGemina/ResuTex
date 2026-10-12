@@ -21,11 +21,16 @@ export const LatexEditor: React.FC = () => {
   };
 
   const handleDownload = () => {
+    if (!latexCode.trim()) {
+      alert("No LaTeX source generated yet. Please upload a resume or create from scratch.");
+      return;
+    }
     const blob = new Blob([latexCode], { type: "application/x-tex;charset=utf-8" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `${resume.personal.name.replace(/\s+/g, "_")}_resume.tex`;
+    const name = resume?.personal?.name ? resume.personal.name.replace(/\s+/g, "_") : "resume";
+    a.download = `${name}_resume.tex`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);

@@ -1,4 +1,4 @@
-import { ResumeData, CoverLetterData } from "@/types/resume";
+import { ResumeData, CoverLetterData, emptyResumeData } from "@/types/resume";
 
 export function escapeLatex(text: string | undefined | null): string {
   if (!text) return "";
@@ -27,21 +27,29 @@ export function escapeLatex(text: string | undefined | null): string {
   return escaped;
 }
 
-export function generateResumeLatex(resume: ResumeData): string {
-  const p = resume.personal;
+export function generateResumeLatex(resume: ResumeData | null | undefined): string {
+  if (!resume) return "";
+  const p = resume.personal || emptyResumeData.personal;
 
   // Experience section
   const expLines: string[] = [];
   (resume.experience || []).forEach((exp) => {
+    if (!exp.company && !exp.role && (!exp.bullets || exp.bullets.length === 0)) return;
     expLines.push(
       `\\textbf{${escapeLatex(exp.company)} -- ${escapeLatex(exp.role)}} | ${escapeLatex(exp.location || "")}\\\\`
     );
-    expLines.push(`\\textit{${escapeLatex(exp.period)}}`);
-    expLines.push(`\\begin{itemize}`);
-    (exp.bullets || []).forEach((b) => {
-      expLines.push(`  \\item ${escapeLatex(b)}`);
-    });
-    expLines.push(`\\end{itemize}`);
+    if (exp.period) {
+      expLines.push(`\\textit{${escapeLatex(exp.period)}}`);
+    }
+    if (exp.bullets && exp.bullets.length > 0) {
+      expLines.push(`\\begin{itemize}`);
+      exp.bullets.forEach((b) => {
+        if (b.trim()) {
+          expLines.push(`  \\item ${escapeLatex(b)}`);
+        }
+      });
+      expLines.push(`\\end{itemize}`);
+    }
     expLines.push(`\\vspace{4pt}`);
   });
   const experienceSection = expLines.join("\n");
@@ -49,16 +57,21 @@ export function generateResumeLatex(resume: ResumeData): string {
   // Projects section
   const projLines: string[] = [];
   (resume.projects || []).forEach((proj) => {
+    if (!proj.name && (!proj.bullets || proj.bullets.length === 0)) return;
     const techStr = (proj.tech || []).join(", ");
     const roleStr = proj.role || "Developer";
     projLines.push(
       `\\textbf{${escapeLatex(proj.name)} -- ${escapeLatex(roleStr)}} | \\textit{${escapeLatex(techStr)}}`
     );
-    projLines.push(`\\begin{itemize}`);
-    (proj.bullets || []).forEach((b) => {
-      projLines.push(`  \\item ${escapeLatex(b)}`);
-    });
-    projLines.push(`\\end{itemize}`);
+    if (proj.bullets && proj.bullets.length > 0) {
+      projLines.push(`\\begin{itemize}`);
+      proj.bullets.forEach((b) => {
+        if (b.trim()) {
+          projLines.push(`  \\item ${escapeLatex(b)}`);
+        }
+      });
+      projLines.push(`\\end{itemize}`);
+    }
     projLines.push(`\\vspace{4pt}`);
   });
   const projectsSection = projLines.join("\n");
@@ -67,11 +80,12 @@ export function generateResumeLatex(resume: ResumeData): string {
   const skillsDict = resume.skills || {};
   const skillRows: string[] = [];
   Object.entries(skillsDict).forEach(([catKey, skillList]) => {
+    if (!skillList || skillList.length === 0) return;
     const catTitle = catKey
       .replace(/_/g, " ")
       .replace(/\b\w/g, (c) => c.toUpperCase());
     skillRows.push(
-      `\\textbf{${escapeLatex(catTitle)}:} ${escapeLatex((skillList || []).join(", "))} \\\\`
+      `\\textbf{${escapeLatex(catTitle)}:} ${escapeLatex(skillList.join(", "))} \\\\`
     );
   });
   const skillsSection = skillRows.join("\n");
@@ -79,6 +93,7 @@ export function generateResumeLatex(resume: ResumeData): string {
   // Education section
   const eduLines: string[] = [];
   (resume.education || []).forEach((edu) => {
+    if (!edu.institution && !edu.degree) return;
     eduLines.push(
       `\\textbf{${escapeLatex(edu.institution)}} -- ${escapeLatex(edu.degree)} \\hfill ${escapeLatex(edu.period)} \\\\`
     );
@@ -89,14 +104,17 @@ export function generateResumeLatex(resume: ResumeData): string {
   const researchLines: string[] = [];
   if (resume.research && resume.research.length > 0) {
     resume.research.forEach((res) => {
+      if (!res.title && !res.description) return;
       let titleFull = res.title;
       if (res.location) {
         titleFull += ` | ${res.location}`;
       }
       researchLines.push(`\\textbf{${escapeLatex(titleFull)}} \\\\`);
-      researchLines.push(
-        `${escapeLatex(res.description || "")} \\\\ \\vspace{3pt}`
-      );
+      if (res.description) {
+        researchLines.push(
+          `${escapeLatex(res.description)} \\\\ \\vspace{3pt}`
+        );
+      }
     });
   }
   const researchSection = researchLines.join("\n");
@@ -104,6 +122,7 @@ export function generateResumeLatex(resume: ResumeData): string {
   // Certifications section
   const certLines: string[] = [];
   (resume.certifications || []).forEach((cert) => {
+    if (!cert.title) return;
     certLines.push(
       `${escapeLatex(cert.title)} \\hfill \\textbf{${escapeLatex(cert.date)}} \\\\`
     );
@@ -114,13 +133,16 @@ export function generateResumeLatex(resume: ResumeData): string {
   const volLines: string[] = [];
   if (resume.volunteering && resume.volunteering.length > 0) {
     resume.volunteering.forEach((vol) => {
+      if (!vol.organization) return;
       volLines.push(
         `\\textbf{${escapeLatex(vol.organization)}} \\hfill ${escapeLatex(vol.period)}\\\\`
       );
       if (vol.bullets && vol.bullets.length > 0) {
         volLines.push(`\\begin{itemize}`);
         vol.bullets.forEach((b) => {
-          volLines.push(`  \\item ${escapeLatex(b)}`);
+          if (b.trim()) {
+            volLines.push(`  \\item ${escapeLatex(b)}`);
+          }
         });
         volLines.push(`\\end{itemize}`);
       }
@@ -129,16 +151,28 @@ export function generateResumeLatex(resume: ResumeData): string {
   }
   const volunteeringSection = volLines.join("\n");
 
-  const portfolioUrl = p.portfolio || "https://roddneilgemina.github.io";
-  const githubUrl = p.github || "https://github.com/RoddneilGemina";
-  const linkedinUrl =
-    p.linkedin || "https://www.linkedin.com/in/roddneil-gemina-20b423409";
+  const portfolioUrl = p.portfolio || "";
+  const githubUrl = p.github || "";
+  const linkedinUrl = p.linkedin || "";
 
-  const portfolioLabel = portfolioUrl.replace(/^https?:\/\//, "");
-  const githubLabel = githubUrl.replace(/^https?:\/\//, "");
-  const linkedinLabel = linkedinUrl
-    .replace(/^https?:\/\/(www\.)?/, "")
-    .replace(/^linkedin\.com\/in\//, "in/");
+  const contactParts: string[] = [];
+  if (p.email) contactParts.push(escapeLatex(p.email));
+  if (p.phone) contactParts.push(escapeLatex(p.phone));
+  if (p.location) contactParts.push(escapeLatex(p.location));
+
+  const linkParts: string[] = [];
+  if (portfolioUrl) {
+    const label = portfolioUrl.replace(/^https?:\/\//, "");
+    linkParts.push(`\\href{${escapeLatex(portfolioUrl)}}{${escapeLatex(label)}}`);
+  }
+  if (githubUrl) {
+    const label = githubUrl.replace(/^https?:\/\//, "");
+    linkParts.push(`\\href{${escapeLatex(githubUrl)}}{${escapeLatex(label)}}`);
+  }
+  if (linkedinUrl) {
+    const label = linkedinUrl.replace(/^https?:\/\/(www\.)?/, "").replace(/^linkedin\.com\/in\//, "in/");
+    linkParts.push(`\\href{${escapeLatex(linkedinUrl)}}{${escapeLatex(label)}}`);
+  }
 
   return `\\documentclass[a4paper,10pt]{article}
 \\usepackage[utf8]{inputenc}
@@ -156,8 +190,8 @@ export function generateResumeLatex(resume: ResumeData): string {
     colorlinks=true,
     linkcolor=linkblue,
     urlcolor=linkblue,
-    pdftitle={${escapeLatex(p.name)} - Curriculum Vitae},
-    pdfauthor={${escapeLatex(p.name)}}
+    pdftitle={${escapeLatex(p.name || "Resume")} - Curriculum Vitae},
+    pdfauthor={${escapeLatex(p.name || "Candidate")}}
 }
 
 % Section formatting matching standard CV template
@@ -171,49 +205,33 @@ export function generateResumeLatex(resume: ResumeData): string {
 
 % Header
 \\begin{center}
-    {\\LARGE \\textbf{${escapeLatex(p.name)}}} \\\\ \\vspace{2pt}
-    \\small ${escapeLatex(p.email)} \\ $\\cdot$ \\ ${escapeLatex(p.phone)} \\ $\\cdot$ \\ ${escapeLatex(p.location || "Cebu City, PH")} \\\\ \\vspace{2pt}
-    \\small \\href{${escapeLatex(portfolioUrl)}}{${escapeLatex(portfolioLabel)}} \\ $\\cdot$ \\ \\href{${escapeLatex(githubUrl)}}{${escapeLatex(githubLabel)}} \\ $\\cdot$ \\ \\href{${escapeLatex(linkedinUrl)}}{${escapeLatex(linkedinLabel)}}
+    {\\LARGE \\textbf{${escapeLatex(p.name || "Candidate Name")}}} \\\\ \\vspace{2pt}
+    ${contactParts.length > 0 ? `\\small ${contactParts.join(" \\ $\\cdot$ \\ ")} \\\\ \\vspace{2pt}` : ""}
+    ${linkParts.length > 0 ? `\\small ${linkParts.join(" \\ $\\cdot$ \\ ")}` : ""}
 \\end{center}
 
 \\vspace{-2pt}
 
-\\section{Professional Experience}
-${experienceSection}
-
-\\section{Relevant Projects}
-${projectsSection}
-
-\\section{Technical Skills}
-${skillsSection}
-
-\\section{Education}
-${educationSection}
-${
-  researchLines.length > 0
-    ? `\n\\section{Research Conferences \\& Competitions}\n${researchSection}\n`
-    : ""
-}
-\\section{Certifications}
-${certificationsSection}
-${
-  volLines.length > 0
-    ? `\n\\section{Volunteering and Leadership Experience}\n${volunteeringSection}\n`
-    : ""
-}
+${expLines.length > 0 ? `\\section{Professional Experience}\n${experienceSection}\n` : ""}
+${projLines.length > 0 ? `\\section{Relevant Projects}\n${projectsSection}\n` : ""}
+${skillRows.length > 0 ? `\\section{Technical Skills}\n${skillsSection}\n` : ""}
+${eduLines.length > 0 ? `\\section{Education}\n${educationSection}\n` : ""}
+${researchLines.length > 0 ? `\\section{Research Conferences \\& Competitions}\n${researchSection}\n` : ""}
+${certLines.length > 0 ? `\\section{Certifications}\n${certificationsSection}\n` : ""}
+${volLines.length > 0 ? `\\section{Volunteering and Leadership Experience}\n${volunteeringSection}\n` : ""}
 \\end{document}
 `;
 }
 
 export function generateCoverLetterLatex(
-  resume: ResumeData,
+  resume: ResumeData | null | undefined,
   letter: CoverLetterData
 ): string {
-  const p = resume.personal;
+  const p = resume?.personal || emptyResumeData.personal;
   const hiringContact =
     letter.hiringContact && letter.hiringContact !== "Hiring Manager"
       ? letter.hiringContact
-      : `${letter.company} Hiring Team`;
+      : `${letter.company || "Target Company"} Hiring Team`;
 
   return `\\documentclass[letterpaper,11pt]{article}
 \\usepackage[utf8]{inputenc}
@@ -225,8 +243,8 @@ export function generateCoverLetterLatex(
     colorlinks=true,
     linkcolor=blue,
     urlcolor=blue,
-    pdftitle={${escapeLatex(p.name)} - Cover Letter},
-    pdfauthor={${escapeLatex(p.name)}}
+    pdftitle={${escapeLatex(p.name || "Candidate")} - Cover Letter},
+    pdfauthor={${escapeLatex(p.name || "Candidate")}}
 }
 
 \\setlength{\\parindent}{0pt}
@@ -234,8 +252,8 @@ export function generateCoverLetterLatex(
 
 \\begin{document}
 
-\\textbf{${escapeLatex(p.name)}} \\\\
-${escapeLatex(p.location || "Cebu City, PH")} \\\\
+\\textbf{${escapeLatex(p.name || "Candidate Name")}} \\\\
+${escapeLatex(p.location || "")} \\\\
 ${escapeLatex(p.phone)} \\ $\\cdot$ \\ \\href{mailto:${escapeLatex(p.email)}}{${escapeLatex(p.email)}} \\\\
 \\href{${escapeLatex(p.linkedin || "")}}{${escapeLatex(p.linkedin || "")}} \\ $\\cdot$ \\ \\href{${escapeLatex(p.portfolio || "")}}{${escapeLatex(p.portfolio || "")}}
 
@@ -244,11 +262,11 @@ ${escapeLatex(p.phone)} \\ $\\cdot$ \\ \\href{mailto:${escapeLatex(p.email)}}{${
 
 \\vspace{8pt}
 \\textbf{Hiring Team / ${escapeLatex(hiringContact)}} \\\\
-${escapeLatex(letter.company)} \\\\
+${escapeLatex(letter.company || "Company")} \\\\
 Remote (Eligible for Philippines)
 
 \\vspace{8pt}
-\\textbf{Subject: Application for ${escapeLatex(letter.role)}}
+\\textbf{Subject: Application for ${escapeLatex(letter.role || "Software Engineer")}}
 
 \\vspace{4pt}
 Dear ${escapeLatex(hiringContact)},
@@ -264,7 +282,7 @@ ${escapeLatex(letter.closingParagraph)}
 Sincerely,
 
 \\vspace{12pt}
-\\textbf{${escapeLatex(p.name)}} \\\\
+\\textbf{${escapeLatex(p.name || "Candidate Name")}} \\\\
 ${escapeLatex(p.headline || "Software Engineer")}
 \\end{document}
 `;
