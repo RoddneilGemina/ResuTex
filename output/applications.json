@@ -132,5 +132,165 @@
       "cover_letter_pdf": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\remotely_full_stack_developer\\cover_letter.pdf",
       "cold_email": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\remotely_full_stack_developer\\cold_email.md"
     }
+  },
+  {
+    "id": "507aae87-2d7b-4d67-9b10-972e4c1d5d3c",
+    "created_at": "2026-09-14T08:44:49.740575Z",
+    "company": "Bjak",
+    "role": "Backend Software Engineer (AI Finance Agent)",
+    "direct_url": "https://jobs.ashbyhq.com/bjak/9f7e8b62-dfae-47c3-8bc6-9ebf40f09ee3",
+    "source_board": "Ashby",
+    "salary": "PHP 180,000 - 240,000 / mo",
+    "hiring_contact": "Bjak AI & Engineering Hiring Team",
+    "match_score": 73,
+    "matched_skills": [
+      "Python",
+      "AWS",
+      "Kubernetes",
+      "Docker",
+      "PostgreSQL",
+      "AI"
+    ],
+    "missing_skills": [
+      "SRE",
+      "REST",
+      "Microservices"
+    ],
+    "status": "tailored_ready_to_apply",
+    "assets": {
+      "resume_pdf": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\bjak_backend_software_engineer_ai_finance_agent\\resume.pdf",
+      "cover_letter_pdf": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\bjak_backend_software_engineer_ai_finance_agent\\cover_letter.pdf",
+      "cold_email": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\bjak_backend_software_engineer_ai_finance_agent\\cold_email.md"
+    }
+  },
+  {
+    "id": "08647f45-733c-45f9-9323-fb1476f13320",
+    "created_at": "2026-09-14T08:44:49.850958Z",
+    "company": "Double the Donation",
+    "role": "Software Engineer / Software Developer",
+    "direct_url": "https://jobs.ashbyhq.com/double-the-donation/7b2e1f44-9382-416b-bc54-3e9a7e6bdf21",
+    "source_board": "Ashby",
+    "salary": "PHP 200,000 / mo (PHP 2.4M / yr)",
+    "hiring_contact": "Technical Recruiting Team",
+    "match_score": 98,
+    "matched_skills": [
+      "Python",
+      "JavaScript",
+      "React",
+      "AWS",
+      "PostgreSQL"
+    ],
+    "missing_skills": [],
+    "status": "tailored_ready_to_apply",
+    "assets": {
+      "resume_pdf": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\double_the_donation_software_engineer__software_de\\resume.pdf",
+      "cover_letter_pdf": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\double_the_donation_software_engineer__software_de\\cover_letter.pdf",
+      "cold_email": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\double_the_donation_software_engineer__software_de\\cold_email.md"
+    }
+  },
+  {
+    "id": "ae199890-45f4-410e-ae5f-e556d9a1bc25",
+    "created_at": "2026-09-14T08:44:49.976895Z",
+    "company": "Wingz PH",
+    "role": "Software Engineer (Django)",
+    "direct_url": "https://apply.workable.com/wingz/j/69E4C5635F/",
+    "source_board": "Workable",
+    "salary": "PHP 150,000 - 200,000 / mo",
+    "hiring_contact": "Wingz Engineering Leadership",
+    "match_score": 98,
+    "matched_skills": [
+      "Python",
+      "Django",
+      "AWS",
+      "Linux",
+      "CI/CD",
+      "PostgreSQL"
+    ],
+    "missing_skills": [],
+    "status": "tailored_ready_to_apply",
+    "assets": {
+      "resume_pdf": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\wingz_ph_software_engineer_django\\resume.pdf",
+      "cover_letter_pdf": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\wingz_ph_software_engineer_django\\cover_letter.pdf",
+      "cold_email": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\wingz_ph_software_engineer_django\\cold_email.md"
+    }
+  },
+  {
+    "id": "2cc63078-b36a-42a5-afe8-de0295ea28ca",
+    "created_at": "2026-09-14T08:44:50.122165Z",
+    "company": "Foundry for Good",
+    "role": "Software Engineer",
+    "direct_url": "https://jobs.ashbyhq.com/foundry-for-good/3a8c4f19-b22e-4089-8d77-6f81a704e6c1",
+    "source_board": "Ashby",
+    "salary": "PHP 200,000 / mo (PHP 2.4M / yr)",
+    "hiring_contact": "Foundry Talent Acquisition",
+    "match_score": 98,
+    "matched_skills": [
+      "Python",
+      "TypeScript",
+      "React",
+      "AWS",
+      "Docker"
+    ],
+    "missing_skills": [],
+    "status": "tailored_ready_to_apply",
+    "assets": {
+      "resume_pdf": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\foundry_for_good_software_engineer\\resume.pdf",
+      "cover_letter_pdf": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\foundry_for_good_software_engineer\\cover_letter.pdf",
+      "cold_email": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\foundry_for_good_software_engineer\\cold_email.md"
+    }
+  },
+  {
+    "id": "4a6e1c59-50e2-4cf2-bde8-0f94da92ea4b",
+    "created_at": "2026-09-14T08:44:50.401359Z",
+    "company": "Remotely",
+    "role": "Full Stack Developer",
+    "direct_url": "https://apply.workable.com/remotely/j/9E4C87321A/",
+    "source_board": "Workable",
+    "salary": "PHP 140,000 - 180,000 / mo",
+    "hiring_contact": "Engineering Recruitment",
+    "match_score": 77,
+    "matched_skills": [
+      "Python",
+      "React",
+      "Node.js",
+      "Docker",
+      "PostgreSQL"
+    ],
+    "missing_skills": [
+      "QA",
+      "Microservices"
+    ],
+    "status": "tailored_ready_to_apply",
+    "assets": {
+      "resume_pdf": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\remotely_full_stack_developer\\resume.pdf",
+      "cover_letter_pdf": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\remotely_full_stack_developer\\cover_letter.pdf",
+      "cold_email": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\remotely_full_stack_developer\\cold_email.md"
+    }
+  },
+  {
+    "id": "e40c6050-a281-4ecd-aab1-196344fdf58d",
+    "created_at": "2026-09-14T08:48:02.782877Z",
+    "company": "Digital Room (Philippines), Inc.",
+    "role": "Junior Developer",
+    "direct_url": "https://ph.jobstreet.com/companies/digital-room-philippines-inc-168554946282520/reviews?jobId=87055745",
+    "source_board": "JobStreet",
+    "salary": "PHP 35,000 - 50,000 per month",
+    "hiring_contact": "Digital Room Hiring Team",
+    "match_score": 84,
+    "matched_skills": [
+      "JavaScript",
+      "TypeScript",
+      "Node.js",
+      "AWS"
+    ],
+    "missing_skills": [
+      "Angular"
+    ],
+    "status": "tailored_ready_to_apply",
+    "assets": {
+      "resume_pdf": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\digital_room_philippines_inc_junior_developer\\resume.pdf",
+      "cover_letter_pdf": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\digital_room_philippines_inc_junior_developer\\cover_letter.pdf",
+      "cold_email": "C:\\Users\\Admin\\Documents\\Projects\\ResumeBuilder\\output\\digital_room_philippines_inc_junior_developer\\cold_email.md"
+    }
   }
 ]

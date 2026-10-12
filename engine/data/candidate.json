@@ -2,74 +2,48 @@
   "personal": {
     "name": "Roddneil B. Gemina",
     "email": "roddneilgemina@gmail.com",
-    "phone": "+63 956 241 3577",
-    "location": "Cebu City, Philippines",
-    "headline": "Software Engineer | SRE & Full-Stack Developer | Visual AI Researcher",
+    "phone": "+63 956-241-3577",
+    "location": "Cebu City, PH",
+    "headline": "Full-Stack Software Engineer & Site Reliability Engineer",
     "github": "https://github.com/RoddneilGemina",
     "linkedin": "https://www.linkedin.com/in/roddneil-gemina-20b423409",
-    "portfolio": "https://roddneilgemina.github.io",
-    "summary": "Computer Science graduate with published research in AI and gamified systems, hands-on industry experience in Site Reliability Engineering (SRE) at Opswerks and Quality Assurance (QA) at DXForm Technologies. Skilled in Python, Java, JavaScript/TypeScript, AWS, Docker, Kubernetes, and full-stack web architectures."
+    "portfolio": "",
+    "summary": "Full-stack software engineer and site reliability engineering intern with published research in AI and gamified systems, hands-on experience at Opswerks and DXForm Technologies (leading QA, UI/UX, and application logic across Gigi POS and Aicquire), and certified credentials including PhilNITS FE, TOPCIT Level 3, and AWS Academy Graduate. Skilled in TypeScript, React, Next.js, React Native, Node.js, Python, Java, AWS, Kubernetes, Docker, PostgreSQL, MongoDB, and Stripe integration."
   },
   "education": [
     {
       "institution": "Cebu Institute of Technology - University",
-      "degree": "Bachelor of Science in Computer Science",
-      "location": "Cebu City, Philippines",
-      "period": "2022 - 2026",
+      "degree": "BS Computer Science",
+      "location": "Cebu City, PH",
+      "period": "2022 – 2026",
       "highlights": [
         "Presidential OIC & Bass 2 - Koro Teknoy Chorale",
-        "Scopus-Indexed Conference Paper Author (ICETT 2026)",
-        "Philippine Computing Science Congress Presenter (PCSC 2026, Davao)"
+        "Primary Author - Scopus-Indexed ICETT 2026 Conference Paper",
+        "Presenter - Philippine Computing Science Congress (PCSC 2026, Davao)"
       ]
     },
     {
       "institution": "Philippine Science High School - Central Visayas Campus",
-      "degree": "Secondary Education (STEM Strand)",
-      "location": "Argao, Cebu, Philippines",
-      "period": "2016 - 2022",
+      "degree": "STEM Strand (With Honors)",
+      "location": "Argao, Cebu, PH",
+      "period": "2016 – 2022",
       "highlights": [
         "Graduated With Honors",
-        "Dean's Lister Placement",
-        "Red Hot Pawns Chess Club (2 Years)"
+        "Dean's Lister Academic Placement",
+        "Red Hot Pawns Chess Club Strategist"
       ]
-    }
-  ],
-  "certifications": [
-    {
-      "title": "PhilNITS FE (Fundamental Engineer)",
-      "issuer": "Philippine National IT Standards Foundation",
-      "date": "April 2025",
-      "description": "Comprehensive engineering certification assessing discrete structures, algorithms, databases, networking, and software design."
-    },
-    {
-      "title": "TOPCIT Level 3 Expertise",
-      "issuer": "Test of Practical Competency in IT (TOPCIT)",
-      "date": "2025",
-      "description": "Demonstrated advanced proficiency in software development, technical communication, and systems architecture."
-    },
-    {
-      "title": "AWS Academy Graduate - Cloud Architecting & Cloud Foundations",
-      "issuer": "Amazon Web Services (AWS)",
-      "date": "2024 - 2025",
-      "description": "Architecting multi-tier cloud solutions, VPC networking, IAM security, and resilient microservices on AWS."
-    },
-    {
-      "title": "CodeChum Certified in Java & C Programming",
-      "issuer": "CodeChum",
-      "date": "2023 - 2024",
-      "description": "Demonstrated mastery in object-oriented programming, data structures, and memory management."
     }
   ],
   "experience": [
     {
       "company": "Opswerks",
       "role": "Site Reliability Engineering (SRE) Intern",
-      "location": "Cebu City, Philippines",
-      "period": "2026",
+      "location": "Cebu City, PH",
+      "period": "January 2026 – Present",
       "bullets": [
-        "Administered Linux server environments, configuring AWS cloud infrastructure, Docker containers, and Kubernetes pods.",
-        "Built automated deployment pipelines and integrated telemetry and monitoring tools to maintain high application availability.",
-        "Automated repetitive operational workflows using Python and Bash scripting, reducing manual incident troubleshooting time."
+        "Administered enterprise Linux server environments, configuring AWS cloud infrastructure, containerized microservices via Docker, and production-grade Kubernetes pod orchestration.",
+        "Constructed automated deployment pipelines and integrated cluster telemetry, distributed logging, and health monitoring tools to sustain high platform reliability and zero-downtime operations.",
+        "Automated repetitive operational runbooks and system provisioning using Python and Bash scripting, significantly reducing manual incident mitigation time and operational toil."
       ],
       "keywords": [
         "AWS",
@@ -80,89 +54,115 @@
         "Python",
         "Bash",
         "CI/CD",
-        "Monitoring",
+        "Telemetry",
         "DevOps"
       ]
     },
     {
       "company": "DXForm Technologies",
-      "role": "Quality Assurance (QA) Analyst Intern",
-      "location": "Cebu City, Philippines",
-      "period": "2025",
+      "role": "Quality Assurance Analyst & Software Engineer",
+      "location": "Cebu City, PH",
+      "period": "January 2025 – August 2025",
       "bullets": [
-        "Completed 250 hours of On-the-Job Training (OJT), managing test strategy execution across 4 client web and mobile applications.",
-        "Authored structured test plans, executed regression and smoke suites, and logged high-impact defects with reproducible steps in Jira.",
-        "Collaborated closely with software engineering teams to validate bug fixes and enhance cross-browser compatibility standards."
+        "Gigi POS (Next.js, React Native, PostgreSQL, Stripe): Directed core QA testing strategies, authoring structured test matrices and regression suites across web and mobile POS terminals; contributed directly to UI/UX design, application logic, and product experience while developing code-level bug fixes and ensuring transactional integrity for Stripe payment processing.",
+        "Aicquire (React, Node.js, MongoDB, AI-Assisted Tooling): Spearheaded frontend UI/UX architecture and responsive components in React, engineered backend application logic and MongoDB data pipelines in Node.js, and refined product experience to streamline AI-assisted tooling interactions.",
+        "Logged reproducible defect lifecycles with root-cause analysis in Jira, collaborated cross-functionally with dev leads to optimize REST API response payloads, and enforced cross-platform UX fidelity."
       ],
       "keywords": [
         "QA",
-        "Testing",
-        "Bug Tracking",
+        "Gigi POS",
+        "Aicquire",
+        "Next.js",
+        "React Native",
+        "PostgreSQL",
+        "Stripe",
+        "React",
+        "Node.js",
+        "MongoDB",
+        "AI Tooling",
         "Jira",
-        "Regression Testing",
-        "Quality Assurance",
-        "Agile"
+        "Full-Stack"
       ]
     },
     {
-      "company": "CIT-U College of Computer Studies",
-      "role": "AI & Software Researcher",
-      "location": "Cebu City, Philippines",
-      "period": "2025 - 2026",
+      "company": "Nexchef",
+      "role": "Mobile Architect & Full-Stack Developer (Contract / Freelance)",
+      "location": "Cebu City, PH",
+      "period": "November 2024 – March 2025",
       "bullets": [
-        "Primary author of 'Fusion Rush: Enhancing Proficiency in Boolean Logic Algebra through Gamification', accepted at Scopus-indexed ICETT 2026.",
-        "Developed and presented 'Visual AI Logic Proof Parser & Evaluator' at the Philippine Computing Science Congress (PCSC 2026, Davao).",
-        "Engineered rule-based inference engines and computer vision OCR pipelines to evaluate handwritten mathematical logic proofs."
+        "Developed a full-stack culinary mobile application in React Native and TypeScript featuring modular recipe creation, live step-by-step guidance, and synchronized multi-stage culinary timer engines.",
+        "Integrated Supabase Realtime and WebSockets for instant state synchronization across multiple client devices, backed by PostgreSQL relational persistence.",
+        "Designed responsive multi-screen layouts with micro-interactions, local offline persistence, and low-latency client-side caching."
       ],
       "keywords": [
-        "Artificial Intelligence",
-        "Python",
-        "Computer Vision",
-        "OCR",
-        "Inference Engines",
-        "Research",
-        "Scopus"
+        "React Native",
+        "TypeScript",
+        "Supabase",
+        "WebSockets",
+        "PostgreSQL",
+        "Mobile-First"
+      ]
+    },
+    {
+      "company": "Refertoire",
+      "role": "Systems Architect & Full-Stack Developer (Contract / Freelance)",
+      "location": "Cebu City, PH",
+      "period": "January 2026 – Present",
+      "bullets": [
+        "Architected a 100% offline-capable music repertoire management platform, allowing performing ensembles to organize, search, and view complete digital sheet music libraries without internet dependency.",
+        "Engineered local offline persistence utilizing IndexedDB and modern Service Workers, coupled with bidirectional client synchronization protocols upon network reconnection.",
+        "Implemented responsive high-resolution document viewing and instant multi-parameter filtering across hundreds of musical scores."
+      ],
+      "keywords": [
+        "TypeScript",
+        "React",
+        "IndexedDB",
+        "PWA",
+        "Offline-First",
+        "Service Workers"
+      ]
+    },
+    {
+      "company": "DishCover",
+      "role": "Full-Stack Developer & Database Architect (Contract / Freelance)",
+      "location": "Cebu City, PH",
+      "period": "May 2024 – October 2024",
+      "bullets": [
+        "Developed a comprehensive pantry and household inventory management application featuring automated expiration tracking, replenishment alerts, and storage categorization.",
+        "Engineered normalized PostgreSQL relational schemas optimized for high-volume item lookup, barcode data association, and historical consumption analytics.",
+        "Built a responsive, minimalist UI with Tailwind CSS and Next.js server components, optimizing page loads and delivering sub-second interaction speed."
+      ],
+      "keywords": [
+        "Next.js",
+        "React",
+        "PostgreSQL",
+        "Tailwind CSS",
+        "Database Architecture"
+      ]
+    },
+    {
+      "company": "CropConnect",
+      "role": "Full-Stack Agritech Developer (Contract / Freelance)",
+      "location": "Cebu City, PH",
+      "period": "February 2024 – August 2024",
+      "bullets": [
+        "Co-developed an agricultural direct-to-consumer e-commerce platform connecting regional farmers directly with commercial buyers to eliminate intermediary price gouging.",
+        "Engineered catalog browsing, inventory batching, and order fulfillment tracking pipelines with PostgreSQL backend models and responsive UI flows."
+      ],
+      "keywords": [
+        "React",
+        "Node.js",
+        "Express",
+        "PostgreSQL",
+        "E-Commerce"
       ]
     }
   ],
   "projects": [
     {
-      "name": "Fusion Rush: Gamified Boolean Logic & AI Tutoring",
-      "period": "2025 - 2026",
-      "role": "Lead Developer & Researcher",
-      "tech": [
-        "Python",
-        "JavaScript",
-        "Gamification Engine",
-        "Discrete Math"
-      ],
-      "description": "Educational AI tutoring software providing gamified learning on the Rules of Inference for Discrete Math. Tested with CIT-U CS students and accepted at the Scopus-indexed ICETT 2026 Conference.",
-      "bullets": [
-        "Built a modular inference verification engine in Python to validate multi-step logic deductions in real-time.",
-        "Designed interactive user interfaces reducing student error rates on symbolic logic exercises by over 30%."
-      ]
-    },
-    {
-      "name": "Visual AI Logic Proof Parser & Evaluator",
-      "period": "2026",
-      "role": "Lead Researcher & AI Engineer",
-      "tech": [
-        "Python",
-        "Visual AI",
-        "OCR",
-        "Computer Vision",
-        "Logic Verification"
-      ],
-      "description": "System using Visual AI to scan, parse, and evaluate validity and score handwritten Discrete Math proofs. Presented at PCSC 2026 in Davao.",
-      "bullets": [
-        "Created an end-to-end OCR and structural parsing pipeline converting handwritten proofs into structured ASTs.",
-        "Automated step-by-step mathematical soundness verification, delivering instant pedagogical feedback."
-      ]
-    },
-    {
-      "name": "TakeIt \u2014 Event Management & Ticketing Platform",
+      "name": "TakeIt",
+      "role": "Full-Stack Developer & Platform Architect",
       "period": "2024",
-      "role": "Full-Stack Developer",
       "tech": [
         "React",
         "Node.js",
@@ -170,98 +170,214 @@
         "PostgreSQL",
         "REST APIs"
       ],
-      "description": "Scalable event booking platform providing smooth ticketing workflows, seat selection, organizer dashboards, and QR ticket issuance.",
+      "description": "Event management and ticketing platform delivering fluid seat reservations, organizer administration consoles, and automated QR pass verification.",
       "bullets": [
-        "Engineered responsive React frontend integrated with RESTful Node.js backend services and PostgreSQL schemas.",
-        "Implemented real-time ticket inventory locking mechanisms to prevent duplicate bookings under concurrent traffic."
-      ]
-    },
-    {
-      "name": "Nexchef \u2014 Culinary Platform with Synchronized Timers",
-      "period": "2024 - 2025",
-      "role": "Full-Stack Developer",
-      "tech": [
-        "React",
-        "TypeScript",
-        "Node.js",
-        "Supabase",
-        "WebSockets"
-      ],
-      "description": "Interactive recipe and culinary web application featuring live multi-stage recipe timing and community recipe sharing.",
-      "bullets": [
-        "Architected Supabase backend integration for real-time user session sync and state persistence.",
-        "Designed clean component hierarchy with optimized state management."
+        "Architected an end-to-end event management and ticketing platform delivering fluid seat reservations, organizer administration consoles, and automated QR pass verification.",
+        "Engineered transactional database locking mechanisms in PostgreSQL to eliminate duplicate ticket allocations and race conditions under concurrent booking traffic.",
+        "Built responsive client interfaces with real-time seat inventory indicators, event scheduling workflows, and secure payment gateway integrations."
       ]
     },
     {
       "name": "Bomberman BattleRoyale",
-      "period": "2023",
-      "role": "Systems & Game Developer",
+      "role": "Client-Server Systems Architect & Game Developer",
+      "period": "2024",
       "tech": [
         "Java",
-        "Multi-threading",
+        "Multi-Threading",
         "TCP/IP Sockets",
-        "Swing"
+        "Swing",
+        "OOP"
       ],
-      "description": "Multiplayer arcade battle royale game built in Java featuring low-latency socket networking and thread synchronization.",
+      "description": "2D multiplayer client-server arcade game built with custom low-latency socket networking and thread synchronization.",
       "bullets": [
-        "Implemented multi-threaded socket communication supporting synchronized concurrent player state updates.",
-        "Engineered collision detection, map destruction, and grid mechanics from scratch in Java."
+        "Engineered a 2D multiplayer client-server architecture utilizing custom TCP/IP socket protocols and binary serialization to synchronize multi-player state with minimal packet latency.",
+        "Implemented strict Object-Oriented Programming (OOP) design patterns and concurrent multithreading models to decouple the continuous game loop and rendering engine from network I/O.",
+        "Designed procedural arena destruction algorithms, deterministic grid collision detection, and authoritative server-side hit registration."
+      ]
+    },
+    {
+      "name": "Fusion Rush",
+      "role": "Lead Developer & AI Systems Architect",
+      "period": "2025 – 2026",
+      "tech": [
+        "Python",
+        "JavaScript",
+        "Discrete Math",
+        "Gamification Engine"
+      ],
+      "description": "Educational AI tutoring software providing gamified learning and real-time verification of the Rules of Inference for Discrete Math.",
+      "bullets": [
+        "Architected an educational AI tutoring and gamified logic application verifying Discrete Mathematics Rules of Inference in real-time.",
+        "Built a rule-based AST inference validation engine in Python, delivering immediate pedagogical feedback and reducing student error rates on symbolic logic exercises."
+      ]
+    }
+  ],
+  "research": [
+    {
+      "title": "International Conference on Education and Training Technologies (ICETT 2026)",
+      "role": "Primary Author & Software Architect",
+      "location": "Scopus-Indexed",
+      "paper": "Fusion Rush: Enhancing Proficiency in Boolean Logic Algebra through Gamification",
+      "description": "Architected and authored 'Fusion Rush: Enhancing Proficiency in Boolean Logic Algebra through Gamification'. Engineered an adaptive AI tutoring software and gamified inference verification system, conducting empirical classroom deployments across Discrete Mathematics cohorts at CIT-U College of Computer Studies."
+    },
+    {
+      "title": "10th Philippine Computing Science Congress (PCSC 2026)",
+      "role": "Author & Presenter",
+      "location": "Davao",
+      "paper": "Bridging the Gap Between Synthetic and Real Handwriting: Using Visual AI to Accurately Parse Structured Logic Proofs",
+      "description": "Developed and presented 'Bridging the Gap Between Synthetic and Real Handwriting: Using Visual AI to Accurately Parse Structured Logic Proofs'. Engineered an end-to-end computer vision and structural parsing pipeline converting handwritten Discrete Math logic proofs into structured Abstract Syntax Trees (ASTs) for automated grading and semantic validity verification."
+    }
+  ],
+  "certifications": [
+    {
+      "title": "PhilNITS Fundamental Information Technology Engineers (FE) Certification",
+      "issuer": "Philippine National IT Standards Foundation",
+      "date": "Apr. 2025"
+    },
+    {
+      "title": "Level 3 TOPCIT Passer (Test of Practical Competency in IT)",
+      "issuer": "Institute for Information & Communications Technology Planning & Evaluation",
+      "date": "Jun. 2025"
+    },
+    {
+      "title": "AWS Academy Graduate - Cloud Architecting - Training Badge",
+      "issuer": "Amazon Web Services (AWS)",
+      "date": "Nov. 2025"
+    },
+    {
+      "title": "AWS Academy Graduate - Cloud Foundations - Training Badge",
+      "issuer": "Amazon Web Services (AWS)",
+      "date": "Nov. 2025"
+    },
+    {
+      "title": "CodeChum Java Certification",
+      "issuer": "CodeChum",
+      "date": "Mar. 2024"
+    },
+    {
+      "title": "CodeChum C Certification",
+      "issuer": "CodeChum",
+      "date": "Apr. 2023"
+    }
+  ],
+  "volunteering": [
+    {
+      "organization": "Koro Teknoy Chorale – Presidential OIC & Bass 2",
+      "period": "Jun. 2022 – Present",
+      "bullets": [
+        "Served as Presidential Officer-in-Charge directing choral operations, institutional representation, and rehearsal governance for the university’s premier choral ensemble.",
+        "Coordinated stage logistics, member scheduling, and vocal performances for major academic ceremonies and institutional university assemblies."
+      ]
+    },
+    {
+      "organization": "Concert for a Cause – Featured Choral Performer",
+      "period": "Jan. 2023",
+      "bullets": [
+        "Volunteered as featured vocalist performing in the Bradford Grand Choir benefit concert, mobilizing fundraising and relief donations for families displaced by Typhoon Odette."
+      ]
+    },
+    {
+      "organization": "NSTP-CWTS Labangon Outreach – Community Welfare Volunteer",
+      "period": "Apr. 2023",
+      "bullets": [
+        "Organized direct logistics, supply sorting, and donation distribution campaigns serving persons with disabilities (PWDs) across the Labangon community."
+      ]
+    },
+    {
+      "organization": "Household of Faith Choir – Featured Sacred Music Vocalist",
+      "period": "2022",
+      "bullets": [
+        "Performed as choral vocalist for major seasonal productions including the annual Easter Cantata and Christmas Cantata."
+      ]
+    },
+    {
+      "organization": "Red Hot Pawns Chess Club – Active Member & Scholastic Player",
+      "period": "2018 – 2020",
+      "bullets": [
+        "Represented the campus in inter-scholastic chess tournaments and co-facilitated chess strategy coaching sessions at Philippine Science High School - CVC."
       ]
     }
   ],
   "skills": {
-    "languages": [
-      "Python",
-      "Java",
-      "C",
-      "C++",
-      "C#",
-      "JavaScript (ES6+)",
+    "frontend_development": [
       "TypeScript",
-      "PHP",
-      "SQL",
+      "JavaScript (ES6+)",
+      "React.js",
+      "Next.js",
       "HTML5",
       "CSS3",
-      "Bash"
+      "Tailwind CSS",
+      "Responsive Web Design",
+      "UI/UX Design (Figma)",
+      "PWA"
     ],
-    "frameworks": [
-      "React",
-      "Next.js",
+    "backend_api_engineering": [
       "Node.js",
-      "Express",
-      "Django",
-      "FastAPI",
-      "Android Studio"
+      "Express.js",
+      "Python (FastAPI, Django)",
+      "Java",
+      "C#",
+      "C++",
+      "C",
+      "PHP",
+      "RESTful APIs",
+      "WebSockets",
+      "TCP/IP Sockets",
+      "Multi-threading"
     ],
-    "cloud_devops": [
-      "AWS (EC2, S3, VPC, IAM)",
-      "Kubernetes",
-      "Docker",
-      "Linux Administration",
-      "CI/CD",
-      "Supabase",
-      "Git"
-    ],
-    "databases": [
+    "databases_state_management": [
       "PostgreSQL",
+      "MongoDB",
       "MySQL",
+      "Supabase",
       "SQLite",
-      "Supabase"
+      "Redis",
+      "Relational Modeling",
+      "Query Optimization",
+      "Database Locking",
+      "RLS"
     ],
-    "testing_tools": [
-      "Quality Assurance",
-      "Jira",
-      "Automated Testing",
-      "Postman",
-      "Jest"
+    "cloud_devops_sre": [
+      "AWS (EC2, S3, VPC, IAM, RDS)",
+      "Docker & Containers",
+      "Kubernetes",
+      "Linux Server Administration",
+      "CI/CD Pipelines",
+      "Git",
+      "GitHub",
+      "Bash Scripting"
     ],
-    "core_competencies": [
-      "Data Structures & Algorithms",
-      "Discrete Mathematics",
+    "mobile_payment_platforms": [
+      "React Native",
+      "Android Studio (Java/Kotlin)",
+      "Stripe API Integration",
+      "Mobile-First Architecture",
+      "Memory Management"
+    ],
+    "ai_engineering_applied_tools": [
+      "AI-Assisted Tooling",
+      "Computer Vision",
+      "OCR Pipelines",
+      "Rule-Based Inference Engines",
+      "AST Parsing",
+      "Discrete Logic Verification"
+    ],
+    "software_qa_testing": [
+      "Test Planning",
+      "Regression Testing",
+      "Smoke Testing",
+      "Defect Tracking & Bug Fixing (Jira)",
+      "API Testing (Postman)",
+      "TDD"
+    ],
+    "foundational_cs": [
+      "Data Structures and Algorithms",
+      "Automata Theory & Formal Languages",
       "Systems Architecture",
-      "Site Reliability Engineering",
-      "Visual AI & OCR"
+      "Distributed Systems"
+    ],
+    "spoken_languages": [
+      "Cebuano (Native), English (Fluent), Filipino (Fluent)"
     ]
   }
 }

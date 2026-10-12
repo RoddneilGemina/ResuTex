@@ -1,52 +1,60 @@
-\documentclass[letterpaper,10pt]{article}
+\documentclass[a4paper,10pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage{geometry}
-\geometry{letterpaper, margin=0.6in}
+\geometry{a4paper, margin=0.4in}
 \usepackage{enumitem}
 \usepackage{hyperref}
 \usepackage{titlesec}
+\usepackage{amssymb}
+\usepackage{xcolor}
+
+\definecolor{linkblue}{HTML}{1155CC}
 
 \hypersetup{
     colorlinks=true,
-    linkcolor=blue,
-    urlcolor=blue,
-    pdftitle={<<NAME>> - Resume},
+    linkcolor=linkblue,
+    urlcolor=linkblue,
+    pdftitle={<<NAME>> - Curriculum Vitae},
     pdfauthor={<<NAME>>}
 }
 
-% Section formatting
+% Section formatting matching standard CV template
 \titleformat{\section}{\large\bfseries\uppercase}{}{0em}{}[\titlerule]
-\titlespacing*{\section}{0pt}{8pt}{4pt}
+\titlespacing*{\section}{0pt}{9pt}{4pt}
 
 \setlength{\parindent}{0pt}
-\setlist[itemize]{leftmargin=*,noitemsep,topsep=2pt}
+\setlist[itemize]{leftmargin=14pt,noitemsep,topsep=2pt,label={\tiny$\blacksquare$}}
 
 \begin{document}
 
 % Header
 \begin{center}
     {\LARGE \textbf{<<NAME>>}} \\ \vspace{2pt}
-    \small <<LOCATION>> \ $\cdot$ \ <<PHONE>> \ $\cdot$ \ \href{mailto:<<EMAIL>>}{<<EMAIL>>} \\ \vspace{2pt}
-    \href{<<LINKEDIN>>}{LinkedIn} \ $\cdot$ \ \href{<<GITHUB>>}{GitHub} \ $\cdot$ \ \href{<<PORTFOLIO>>}{Portfolio}
+    \small <<EMAIL>> \ $\cdot$ \ <<PHONE>> \ $\cdot$ \ <<LOCATION>> \\ \vspace{2pt}
+    \small \href{<<PORTFOLIO>>}{<<PORTFOLIO_LABEL>>} \ $\cdot$ \ \href{<<GITHUB>>}{<<GITHUB_LABEL>>} \ $\cdot$ \ \href{<<LINKEDIN>>}{<<LINKEDIN_LABEL>>}
 \end{center}
 
-\vspace{-4pt}
-\section{Professional Summary}
-<<SUMMARY>>
+\vspace{-2pt}
 
-\section{Education}
-<<EDUCATION_SECTION>>
-
-\section{Industry Certifications}
-<<CERTIFICATIONS_SECTION>>
-
-\section{Work Experience}
+\section{Professional Experience}
 <<EXPERIENCE_SECTION>>
 
-\section{Featured Projects \& Research}
+\section{Relevant Projects}
 <<PROJECTS_SECTION>>
 
 \section{Technical Skills}
 <<SKILLS_SECTION>>
+
+\section{Education}
+<<EDUCATION_SECTION>>
+
+\section{Research Conferences \& Competitions}
+<<RESEARCH_SECTION>>
+
+\section{Certifications}
+<<CERTIFICATIONS_SECTION>>
+
+\section{Volunteering and Leadership Experience}
+<<VOLUNTEERING_SECTION>>
 
 \end{document}

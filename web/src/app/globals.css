@@ -1,0 +1,292 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #000000;
+  --on-primary: #ffffff;
+  --ink: #000000;
+  --canvas: #ffffff;
+  --inverse-canvas: #000000;
+  --inverse-ink: #ffffff;
+  --on-inverse-soft: rgba(255, 255, 255, 0.16);
+  --hairline: #e6e6e6;
+  --hairline-soft: #f1f1f1;
+  --surface-soft: #f7f7f5;
+  --block-lime: #dceeb1;
+  --block-lilac: #c5b0f4;
+  --block-cream: #f4ecd6;
+  --block-pink: #efd4d4;
+  --block-mint: #c8e6cd;
+  --block-coral: #f3c9b6;
+  --block-navy: #1f1d3d;
+  --accent-magenta: #ff3d8b;
+  --semantic-success: #1ea64a;
+  --overlay-scrim: rgba(0, 0, 0, 0.6);
+}
+
+/* Base Body Typography & Canvas */
+body {
+  background-color: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Figma Sans Variable Typography Hierarchy */
+.figma-display-xl {
+  font-size: clamp(44px, 5.5vw, 86px);
+  font-weight: 340;
+  line-height: 1.0;
+  letter-spacing: -1.72px;
+}
+
+.figma-display-lg {
+  font-size: clamp(34px, 4vw, 64px);
+  font-weight: 340;
+  line-height: 1.1;
+  letter-spacing: -0.96px;
+}
+
+.figma-headline {
+  font-size: 26px;
+  font-weight: 540;
+  line-height: 1.35;
+  letter-spacing: -0.26px;
+}
+
+.figma-subhead {
+  font-size: 26px;
+  font-weight: 340;
+  line-height: 1.35;
+  letter-spacing: -0.26px;
+}
+
+.figma-card-title {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: 0;
+}
+
+.figma-body-lg {
+  font-size: 20px;
+  font-weight: 330;
+  line-height: 1.40;
+  letter-spacing: -0.14px;
+}
+
+.figma-body {
+  font-size: 16px;
+  font-weight: 340;
+  line-height: 1.45;
+  letter-spacing: -0.26px;
+}
+
+.figma-body-sm {
+  font-size: 14px;
+  font-weight: 340;
+  line-height: 1.45;
+  letter-spacing: -0.14px;
+}
+
+/* Eyebrows and Captions strictly in figmaMono uppercase */
+.figma-eyebrow {
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.30;
+  letter-spacing: 0.54px;
+  text-transform: uppercase;
+}
+
+.figma-caption {
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.20;
+  letter-spacing: 0.60px;
+  text-transform: uppercase;
+}
+
+/* Authentic Paper & Typesetting */
+.latex-font {
+  font-family: "EB Garamond", "Times New Roman", Times, "Nimbus Roman No9 L", Georgia, serif;
+  font-feature-settings: "kern" 1, "liga" 1;
+}
+
+/* Modern Document Preview Sheet */
+.resume-paper {
+  background-color: #ffffff;
+  color: #000000;
+  box-shadow: 
+    0 1px 3px 0 rgba(0, 0, 0, 0.08),
+    0 8px 24px -4px rgba(0, 0, 0, 0.12),
+    0 2px 6px -1px rgba(0, 0, 0, 0.04);
+  width: 100%;
+  max-width: 820px;
+  min-height: 1060px;
+  padding: 44px 48px;
+  line-height: 1.35;
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  border-radius: 2px;
+}
+
+/* Figma Color Block Surfaces */
+.bg-block-lime {
+  background-color: var(--block-lime);
+}
+.bg-block-lilac {
+  background-color: var(--block-lilac);
+}
+.bg-block-cream {
+  background-color: var(--block-cream);
+}
+.bg-block-mint {
+  background-color: var(--block-mint);
+}
+.bg-block-pink {
+  background-color: var(--block-pink);
+}
+.bg-block-coral {
+  background-color: var(--block-coral);
+}
+.bg-block-navy {
+  background-color: var(--block-navy);
+}
+.bg-surface-soft {
+  background-color: var(--surface-soft);
+}
+
+/* Figma Input Style */
+.figma-input {
+  background-color: var(--canvas);
+  border: 1px solid var(--hairline);
+  color: var(--ink);
+  border-radius: 8px;
+  font-size: 13px;
+  padding: 9px 12px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.figma-input:focus {
+  border-color: var(--ink);
+  outline: none;
+  box-shadow: 0 0 0 1px var(--ink);
+}
+
+/* Figma Pill Buttons */
+.figma-btn-primary {
+  background-color: var(--primary);
+  color: var(--on-primary);
+  border-radius: 50px;
+  font-weight: 500;
+  transition: transform 0.1s ease, background-color 0.15s ease;
+}
+
+.figma-btn-primary:hover {
+  background-color: #1f1f1f;
+}
+
+.figma-btn-primary:active {
+  transform: scale(0.98);
+}
+
+.figma-btn-secondary {
+  background-color: var(--canvas);
+  color: var(--ink);
+  border: 1px solid var(--hairline);
+  border-radius: 50px;
+  font-weight: 500;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
+}
+
+.figma-btn-secondary:hover {
+  background-color: var(--surface-soft);
+  border-color: #d4d4d4;
+}
+
+.figma-btn-secondary:active {
+  transform: scale(0.98);
+}
+
+.figma-btn-promo {
+  background-color: var(--accent-magenta);
+  color: #ffffff;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: background-color 0.15s ease, transform 0.1s ease;
+}
+
+.figma-btn-promo:hover {
+  background-color: #eb2877;
+}
+
+.figma-btn-promo:active {
+  transform: scale(0.98);
+}
+
+/* Figma Circular Icon Button */
+.figma-btn-icon {
+  background-color: var(--surface-soft);
+  color: var(--ink);
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease;
+}
+
+.figma-btn-icon:hover {
+  background-color: #ebebe8;
+}
+
+.figma-btn-icon-inverse {
+  background-color: var(--on-inverse-soft);
+  color: var(--inverse-ink);
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease;
+}
+
+.figma-btn-icon-inverse:hover {
+  background-color: rgba(255, 255, 255, 0.28);
+}
+
+/* Figma Clean Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4d4d0;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a2;
+}
+
+/* Print CSS */
+@media print {
+  body {
+    background: transparent !important;
+  }
+  header, section:first-child, .no-print, .marquee-strip {
+    display: none !important;
+  }
+  .resume-paper {
+    box-shadow: none !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+  }
+}

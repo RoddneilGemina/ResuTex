@@ -1,14 +1,15 @@
-﻿# Autonomous Job Hunting Pipeline & ATS Resume Engine
+# ResuTex | Autonomous ATS Resume Engine & Studio
 
-An autonomous software engineering job application pipeline for **Roddneil B. Gemina**. 
-Searches direct ATS boards (Ashby, Workable, Greenhouse, Lever), matches candidate qualifications, dynamically tailors ATS resumes and cover letters, compiles PDFs, drafts cold outreach emails, and logs applications to Supabase and local ledgers.
+An autonomous software engineering job application pipeline and interactive LaTeX resume studio for **Roddneil B. Gemina**. 
+Searches direct ATS boards (Ashby, Workable, Greenhouse, Lever), matches candidate qualifications, dynamically tailors ATS resumes and cover letters, compiles PDFs with ReportLab, drafts cold outreach emails, and logs applications to Supabase and local ledgers.
 
 ---
 
 ## 📁 Repository Architecture
 
 ```
-ResumeBuilder/
+ResuTex/
+├── web/                           # Next.js 16 (Turbopack) Studio with Figma Design System
 ├── engine/
 │   ├── __init__.py                # Exposes process_job() and key symbols
 │   ├── data/
