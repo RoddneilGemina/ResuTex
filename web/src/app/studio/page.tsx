@@ -21,9 +21,9 @@ export default function StudioPage() {
       <Header onOpenImport={() => setIsImportOpen(true)} />
 
       {/* Main Workspace: Two-Pane Studio Layout adhering to Figma Design System */}
-      <div className="flex-1 max-w-[1440px] w-full mx-auto p-3 sm:p-5 grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
+      <div className="flex-1 max-w-[1760px] w-full mx-auto px-3 sm:px-5 py-3 grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
         {/* Left Pane: Interactive Editor / Tailor Suite */}
-        <section className="lg:col-span-6 xl:col-span-6 flex flex-col h-[calc(100vh-112px)] overflow-y-auto pr-1">
+        <section className="lg:col-span-5 xl:col-span-5 flex flex-col h-[calc(100vh-76px)] overflow-y-auto pr-1">
           {!hasActiveResume ? (
             <StudioEmptyState onOpenImport={() => setIsImportOpen(true)} />
           ) : (
@@ -37,7 +37,7 @@ export default function StudioPage() {
         </section>
 
         {/* Right Pane: Live Paper & Compiled PDF Preview Studio */}
-        <section className="lg:col-span-6 xl:col-span-6 flex flex-col h-[calc(100vh-112px)]">
+        <section className="lg:col-span-7 xl:col-span-7 flex flex-col h-[calc(100vh-76px)]">
           <LivePreviewPane />
         </section>
       </div>
