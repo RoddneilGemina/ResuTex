@@ -110,7 +110,7 @@ Return strictly valid JSON only. Do not wrap in markdown quotes if possible, or 
       parts.push({ text: prompt });
 
       const response = await client.models.generateContent({
-        model: "gemini-3.8-flash",
+        model: "gemini-2.5-flash",
         contents: parts,
         config: {
           responseMimeType: "application/json",
@@ -165,7 +165,7 @@ Provide an ATS analysis in strict JSON with:
 5. "summary": brief 2-3 sentence executive assessment of the candidate's alignment.`;
 
       const response = await client.models.generateContent({
-        model: "gemini-3.8-flash",
+        model: "gemini-2.5-flash",
         contents: [{ text: prompt }],
         config: {
           responseMimeType: "application/json",
@@ -207,7 +207,7 @@ Output strict JSON:
 }`;
 
       const response = await client.models.generateContent({
-        model: "gemini-3.8-flash",
+        model: "gemini-2.5-flash",
         contents: [{ text: prompt }],
         config: {
           responseMimeType: "application/json",
@@ -260,7 +260,7 @@ Output strict JSON with fields:
 }`;
 
       const response = await client.models.generateContent({
-        model: "gemini-3.8-flash",
+        model: "gemini-2.5-flash",
         contents: [{ text: prompt }],
         config: {
           responseMimeType: "application/json",

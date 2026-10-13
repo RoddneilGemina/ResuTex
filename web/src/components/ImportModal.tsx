@@ -104,7 +104,7 @@ export const ImportModal: React.FC<ImportModalProps> = ({ isOpen, onClose }) => 
                 Import Existing Resume
               </h3>
               <p className="figma-caption text-[10px] text-neutral-500 dark:text-neutral-400">
-                GEMINI 3.8 FLASH MULTIMODAL PARSER
+                UNIVERSAL ATS PARSER &bull; PDF, DOCX, JSON, TXT
               </p>
             </div>
           </div>
@@ -119,12 +119,24 @@ export const ImportModal: React.FC<ImportModalProps> = ({ isOpen, onClose }) => 
         {/* Dropzone */}
         <div
           onClick={() => fileInputRef.current?.click()}
+          onDragOver={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+          }}
+          onDrop={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+              setSelectedFile(e.dataTransfer.files[0]);
+              setError(null);
+            }
+          }}
           className="border-2 border-dashed border-[#e6e6e6] dark:border-[#1e293b] hover:border-black dark:hover:border-white rounded-2xl p-7 text-center cursor-pointer bg-[#f7f7f5] dark:bg-[#0a0f1a] hover:bg-[#f1f1ee] dark:hover:bg-[#111726] transition group"
         >
           <input
             ref={fileInputRef}
             type="file"
-            accept=".pdf,.docx,.json,.txt"
+            accept=".pdf,.docx,.doc,.json,.txt"
             onChange={handleFileChange}
             className="hidden"
           />
@@ -133,13 +145,13 @@ export const ImportModal: React.FC<ImportModalProps> = ({ isOpen, onClose }) => 
           </div>
           <p className="text-xs font-semibold text-black dark:text-white">
             {selectedFile ? (
-              <span className="font-bold underline">{selectedFile.name}</span>
+              <span className="font-bold underline text-[#1ea64a] dark:text-[#22c55e]">{selectedFile.name}</span>
             ) : (
               "Click or drop PDF, DOCX, or JSON resume here"
             )}
           </p>
           <p className="figma-caption text-[10px] text-neutral-500 dark:text-neutral-400 mt-1">
-            EXTRACTS WORK EXPERIENCE, BULLETS, METRICS, AND SKILLS
+            PARSES SECTIONS, EXPERIENCES, BULLETS, DATES, AND SKILLS
           </p>
         </div>
 
@@ -180,7 +192,7 @@ export const ImportModal: React.FC<ImportModalProps> = ({ isOpen, onClose }) => 
             {isProcessing ? (
               <>
                 <div className="w-3.5 h-3.5 border-2 border-white dark:border-black border-t-transparent rounded-full animate-spin" />
-                <span>Parsing with Gemini...</span>
+                <span>Extracting & Parsing...</span>
               </>
             ) : (
               <>
