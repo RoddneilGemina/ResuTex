@@ -1,6 +1,6 @@
 # ResuTex | Autonomous ATS Resume Engine & Studio
 
-An autonomous software engineering job application pipeline and interactive LaTeX resume studio for **Roddneil B. Gemina**. 
+An autonomous software engineering job application pipeline and interactive LaTeX resume studio. 
 Searches direct ATS boards (Ashby, Workable, Greenhouse, Lever), matches candidate qualifications, dynamically tailors ATS resumes and cover letters, compiles PDFs with ReportLab, drafts cold outreach emails, and logs applications to Supabase and local ledgers.
 
 ---
