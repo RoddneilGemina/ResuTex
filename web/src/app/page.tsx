@@ -88,7 +88,7 @@ export default function LandingPage() {
               href="/studio"
               className="inline-flex items-center gap-2 px-4 py-1.5 text-xs font-semibold figma-btn-primary"
             >
-              <span>Launch Studio</span>
+              <span>Open Studio</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
@@ -155,14 +155,14 @@ export default function LandingPage() {
             </span>
           </div>
 
-          {/* Display-XL Headline */}
+          {/* Display-XL Headline - Call */}
           <h1 className="figma-display-xl font-bold tracking-tight text-black dark:text-white max-w-4xl mx-auto mb-6">
-            100% ATS Parsability. Authentic LaTeX Typesetting.
+            Make job hunting customizable.
           </h1>
 
-          {/* Subhead Body */}
+          {/* Subhead Body - Response */}
           <p className="figma-subhead text-neutral-700 dark:text-neutral-300 max-w-2xl mx-auto mb-9 leading-relaxed font-normal">
-            ResuTex pairs an interactive split-screen studio with a sub-second ReportLab Python compiler and Gemini 3.8 Flash intelligence. Zero formatting artifacts, perfect 1-page budgets, and pure downloadable LaTeX code.
+            Tailor authentic LaTeX resumes for every job description in seconds. ResuTex pairs an interactive split-screen studio with Gemini 3.8 Flash AI and sub-second Python ReportLab compilation—producing 100% ATS-parsable, single-column PDFs and clean downloadable .tex source code.
           </p>
 
           {/* CTAs */}
@@ -171,7 +171,7 @@ export default function LandingPage() {
               href="/studio"
               className="px-6 py-3.5 figma-btn-primary text-sm font-semibold flex items-center gap-2 shadow-md hover:scale-[1.02] transition"
             >
-              <span>Open ResuTex Studio</span>
+              <span>Open Studio</span>
               <ArrowRight className="w-4 h-4 text-[#dceeb1] dark:text-[#22c55e]" />
             </Link>
             <a
@@ -415,7 +415,7 @@ export default function LandingPage() {
               href="/studio"
               className="px-8 py-4 figma-btn-primary text-sm font-semibold inline-flex items-center gap-2 shadow-lg hover:scale-105 transition"
             >
-              <span>Launch ResuTex Studio Workspace</span>
+              <span>Open ResuTex Studio Workspace</span>
               <ArrowRight className="w-4 h-4 text-[#dceeb1] dark:text-[#22c55e]" />
             </Link>
           </div>

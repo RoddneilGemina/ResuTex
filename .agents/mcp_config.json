@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "21st": {
+      "command": "cmd.exe",
+      "args": [
+        "/c",
+        "npx -y @21st-dev/magic@latest"
+      ],
+      "url": "https://21st.dev/api/mcp"
+    }
+  }
+}
